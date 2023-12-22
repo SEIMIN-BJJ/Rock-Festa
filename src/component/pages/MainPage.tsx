@@ -5,7 +5,6 @@ import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
-
 interface MainInfoProps {
   isScrolled: boolean;
 }
@@ -52,7 +51,7 @@ const MainTitle = styled.div`
   height: auto;
   position: absolute;
   font-size: 5rem;
-  color: #fff;
+  color: #fef;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   justify-content: flex-start;
@@ -158,32 +157,25 @@ const MainPage = () => {
   };
 
   const ScrollToSecondPage = () => {
-    if (secondPageRef.current) {
-      scroll.scrollTo(secondPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
-  };
-  
-  const ScrollToThirdPage = () => {
-    if (thirdPageRef.current) {
-      scroll.scrollTo(thirdPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
-  };
-  
-  const ScrollToFourthdPage = () => {
-    if (fourthPageRef.current) {
-      scroll.scrollTo(fourthPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
+      scroll.scrollTo(secondPageRef.current!.offsetTop, {
+      duration: 300,
+      smooth: "smooth",
+    });
   };
 
+  const ScrollToThirdPage = () => {
+    scroll.scrollTo(thirdPageRef.current!.offsetTop, {
+    duration: 300,
+    smooth: "smooth",
+  });
+};
+
+const ScrollToFourthdPage = () => {
+  scroll.scrollTo(fourthPageRef.current!.offsetTop, {
+  duration: 300,
+  smooth: "smooth",
+});
+};
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
