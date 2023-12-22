@@ -51,7 +51,7 @@ const MainTitle = styled.div`
   height: auto;
   position: absolute;
   font-size: 5rem;
-  color: #fef;
+  color: #fff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   justify-content: flex-start;
