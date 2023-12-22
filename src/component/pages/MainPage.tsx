@@ -5,6 +5,7 @@ import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
+
 interface MainInfoProps {
   isScrolled: boolean;
 }
@@ -182,6 +183,7 @@ const MainPage = () => {
       });
     }
   };
+
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
