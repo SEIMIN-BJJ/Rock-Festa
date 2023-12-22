@@ -157,25 +157,31 @@ const MainPage = () => {
   };
 
   const ScrollToSecondPage = () => {
-      scroll.scrollTo(secondPageRef.current!.offsetTop, {
-      duration: 300,
-      smooth: "smooth",
-    });
+    if (secondPageRef.current) {
+      scroll.scrollTo(secondPageRef.current.offsetTop, {
+        duration: 300,
+        smooth: "smooth",
+      });
+    }
   };
-
+  
   const ScrollToThirdPage = () => {
-    scroll.scrollTo(thirdPageRef.current!.offsetTop, {
-    duration: 300,
-    smooth: "smooth",
-  });
-};
-
-const ScrollToFourthdPage = () => {
-  scroll.scrollTo(fourthPageRef.current!.offsetTop, {
-  duration: 300,
-  smooth: "smooth",
-});
-};
+    if (thirdPageRef.current) {
+      scroll.scrollTo(thirdPageRef.current.offsetTop, {
+        duration: 300,
+        smooth: "smooth",
+      });
+    }
+  };
+  
+  const ScrollToFourthdPage = () => {
+    if (fourthPageRef.current) {
+      scroll.scrollTo(fourthPageRef.current.offsetTop, {
+        duration: 300,
+        smooth: "smooth",
+      });
+    }
+  };
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
