@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
-import ThirdPage from 'component/ThirdPage';
+import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
 interface MainInfoProps {
   isScrolled: boolean;

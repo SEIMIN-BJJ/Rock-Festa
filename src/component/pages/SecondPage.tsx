@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import RockFestivalIMG from './assets/images/festival.jpeg'
+import RockFestivalIMG from '../assets/images/festival.jpeg'
 
 
 const SecondContent = styled.div`

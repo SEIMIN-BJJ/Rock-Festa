@@ -1,8 +1,8 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import MainPage from "../component/MainPage";
-import SecondPage from "component/SecondPage";
-import ThirdPage from "component/ThirdPage";
-import FourthPage from '../component/FourthPage';
+import MainPage from "component/pages/MainPage";
+import SecondPage from "component/pages/SecondPage";
+import ThirdPage from "component/pages/ThirdPage";
+import FourthPage from "component/pages/FourthPage";
 
 const RockRoutes = () => {
   const location = useLocation();
