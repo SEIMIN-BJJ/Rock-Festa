@@ -188,12 +188,12 @@ const MainPage = () => {
     <MainContainer ref={firstPageRef}>
       <Header />
       <MainContent>
-        <VideoBackground autoPlay loop muted>
-          <source src="/movies/react-movies.mp4" type="video/mp4" />
-        </VideoBackground>
+      <VideoBackground autoPlay loop muted>
+        <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
+      </VideoBackground>
         <MainTitle>
           SEIMIN MUSIC FESTIVAL
-          <MainSubTitle>JAZZ / ROCK / J-MUSIC</MainSubTitle>
+        <MainSubTitle>JAZZ / ROCK / J-MUSIC</MainSubTitle>
         </MainTitle>
         <MainSection isScrolled={scrollPosition > 500 ? true : false}>
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
