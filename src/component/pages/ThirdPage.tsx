@@ -18,9 +18,22 @@ const ThirdSection = styled.article `
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 `;
+
+const ThirdTitle = styled.h4 `
+width: 50%;
+height: 6rem;
+border: 1px solid #fff;
+color: #fff;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+justify-content: center;
+align-items: center;
+display: flex;
+font-size: 3rem;
+letter-spacing: 2rem;
+`
 
 const ThirdeSlide = styled.div`
   width: 100%;
@@ -32,6 +45,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <ThirdContent ref={ref}>
       <ThirdSection>
+        <ThirdTitle>ARTIST</ThirdTitle>
         <ThirdeSlide></ThirdeSlide>
       </ThirdSection>
     </ThirdContent>

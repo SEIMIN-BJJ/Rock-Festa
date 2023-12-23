@@ -1,6 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import FujiRockIMG from '../assets/images/maxresdefault.jpg'
+import { motion } from "framer-motion";
 import '../../App.scss';
 
 const SecondContent = styled.div`
@@ -13,7 +14,7 @@ const SecondContent = styled.div`
   overflow: hidden;
 `;
 
-const SecondSection = styled.article `
+const SecondSection = styled(motion.article) `
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,7 +23,7 @@ const SecondSection = styled.article `
   flex-direction: column;
 `;
 
-const SecondTitle = styled.h4 `
+const SecondTitle = styled(motion.h4) `
     width: 60%;
     color:#000;
     font-size: 3rem;
@@ -35,10 +36,9 @@ const SecondTitle = styled.h4 `
     align-items: flex-start;
     padding: 0 3rem;
     margin: 4rem 0 0 2rem;
-
 `;
 
-const SecondSubTitle = styled.p `
+const SecondSubTitle = styled(motion.p) `
     width: 100%;
     color:#000;
     font-size: 0.8rem;
@@ -50,7 +50,7 @@ const SecondSubTitle = styled.p `
     
 `;
 
-const SecondImg = styled.img `
+const SecondImg = styled(motion.img) `
     width: 100%;
     height: 100%;
     background-image: url(${FujiRockIMG});
@@ -70,7 +70,7 @@ const Information = [
     rockInformation: (
       <p>
           SEIMIN FESTIVAL 은 본인이 좋아하는 밴드만을 골라서 만든 토이프로젝트로써 모일수가 없는 라인업이기<br />때문에 모인다면 좋겠다는 바램으로써 제작을 하였다.<br /><br />
-          컨셉은 락페스티벌이기 때문에 색상의 단조로움을 통해 아티스트들의 MV를 소개함으로써 아티스트들의 영상과 <br />장점을 부각하여 제작하게 되었다.<br /><br />
+          컨셉은 락페스티벌이기 때문에 아티스트들의 MV를 소개함으로써 아티스트들의 영상과 장점을 부각하여 제작하게 되었다.<br /><br />
           본인은 일본문화에 관심이 많고 어릴적 부터 밴드음악을 많이 듣고 자라다보니 현재도 밴드음악에 아이덴티티가 있다.<br />
           일본밴드 및 일본재즈, 시부야케이를 많이 듣는편 이여서 대중적이지 않은 밴드들이 많이 알고 있는데
           <br />이들을 알리고 싶다는 생각을 종종 하곤 했었다.<br /><br />
@@ -85,21 +85,98 @@ const Information = [
   },
 ];
 const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
+
+  const [animate, setAnimate] = useState(false);
+
+  const animationLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const animationRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const transition = {
+    duration: 1,
+    delay: 0.1,
+  };
+
+  const transitionSecond = {
+    duration: 1,
+    delay: 0.3,
+  };
+  const transitionText = {
+    duration: 1,
+    delay: 1,
+  };
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    console.log(scrollPosition)
+  
+    if (window.innerWidth >= 768) {
+      // 웹페이지 스크롤
+      if (scrollPosition > 400 && scrollPosition < 1200) {
+        setAnimate(true);
+      } else {
+        setAnimate(false);
+      }
+    } else {
+      // 모바일 스크롤
+      if (scrollPosition > 600) {
+        setAnimate(false);
+      } else {
+        setAnimate(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    handleScroll();
+  }, []); 
+
   return (
     <SecondContent ref={ref}>
-      <SecondSection>
+      <SecondSection           
+          variants={animationLeft}
+          initial="hidden"
+          animate={animate ? "visible" : "hidden"}
+          transition={transition}>
+
         {Information.map((item, index) => (
-        <SecondTitle>
+        <SecondTitle
+        variants={animationRight}
+        initial="hidden"
+        animate={animate ? "visible" : "hidden"}
+        transition={transitionSecond}>
           {item.rockTitle}
         </SecondTitle>
         ))}
         {Information.map((item, index) => (
-        <SecondSubTitle>
+        <SecondSubTitle
+        variants={animationLeft}
+        initial="hidden"
+        animate={animate ? "visible" : "hidden"}
+        transition={transitionText}>
           {item.rockInformation}
         </SecondSubTitle>
         ))};
       </SecondSection>
-        <SecondImg />
+        <SecondImg
+          variants={animationLeft}
+          initial="hidden"
+          animate={animate ? "visible" : "hidden"}
+          transition={transitionSecond} />
     </SecondContent>
   );
 });
