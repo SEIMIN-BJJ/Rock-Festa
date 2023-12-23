@@ -10,36 +10,25 @@ const ThirdContent = styled.div`
   align-items: center;
   margin: auto;
   overflow: hidden;
+  background-color: #000000;
 `;
 
 const ThirdSection = styled.article `
-  
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-`
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+`;
 
-const ThirdInfo = styled.div `
-    width: 30%;
-    height: 30vh;
-    background-color: #6c302a;
-`
 
-const ThirdText = styled.div `
-    width: 30%;
-    height: 30vh;
-    background-color: #857c7b;
 
-`
+
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <ThirdContent ref={ref}>
       <ThirdSection>
-        <ThirdInfo />
-        <ThirdText />
       </ThirdSection>
     </ThirdContent>
   );

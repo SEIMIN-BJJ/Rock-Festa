@@ -5,6 +5,7 @@ import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
+import '../../App.scss';
 
 interface MainInfoProps {
   isScrolled: boolean;
@@ -200,8 +201,8 @@ const MainPage = () => {
             <ul>
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
-              <li onClick={ScrollToThirdPage}>Programs</li>
-              <li onClick={ScrollToFourthdPage}>Artist</li>
+              <li onClick={ScrollToThirdPage}>Artist</li>
+              <li onClick={ScrollToFourthdPage}>PV</li>
             </ul>
           </MainInfo>
         </MainSection>

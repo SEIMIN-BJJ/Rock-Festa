@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import RockFestivalIMG from '../assets/images/festival.jpeg'
-
+import FujiRockIMG from '../assets/images/maxresdefault.jpg'
+import '../../App.scss';
 
 const SecondContent = styled.div`
   width: 100vw;
@@ -11,7 +11,6 @@ const SecondContent = styled.div`
   align-items: center;
   margin: auto;
   overflow: hidden;
-  background-color: #fff;
 `;
 
 const SecondSection = styled.article `
@@ -40,7 +39,7 @@ const SecondTitle = styled.h4 `
 `;
 
 const SecondSubTitle = styled.p `
-    width: 90%;
+    width: 100%;
     color:#000;
     font-size: 0.8rem;
     font-family: 'Pretendard-Medium';
@@ -48,12 +47,13 @@ const SecondSubTitle = styled.p `
     padding: 2rem 3rem;
     margin: 4rem 0 0 4rem;
     margin-top: 0;
+    
 `;
 
 const SecondImg = styled.img `
     width: 100%;
     height: 100%;
-    background-image: url(${RockFestivalIMG});
+    background-image: url(${FujiRockIMG});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
