@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 
-const ThirdContent = styled.div`
+const ThirdContent = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -10,36 +10,43 @@ const ThirdContent = styled.div`
   align-items: center;
   margin: auto;
   overflow: hidden;
+  background-color: #000000;
 `;
 
 const ThirdSection = styled.article `
-  
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  flex-direction: column;
+`;
+
+const ThirdTitle = styled.h4 `
+width: 50%;
+height: 6rem;
+border: 1px solid #fff;
+color: #fff;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+justify-content: center;
+align-items: center;
+display: flex;
+font-size: 3rem;
+letter-spacing: 2rem;
 `
 
-const ThirdInfo = styled.div `
-    width: 30%;
-    height: 30vh;
-    background-color: #6c302a;
+const ThirdeSlide = styled.div`
+  width: 100%;
+  height: 30rem;
+  border: 1px solid #fff;
 `
 
-const ThirdText = styled.div `
-    width: 30%;
-    height: 30vh;
-    background-color: #857c7b;
-
-`
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <ThirdContent ref={ref}>
       <ThirdSection>
-        <ThirdInfo />
-        <ThirdText />
+        <ThirdTitle>ARTIST</ThirdTitle>
+        <ThirdeSlide></ThirdeSlide>
       </ThirdSection>
     </ThirdContent>
   );

@@ -84,15 +84,29 @@ const HeaderDiv = styled.div`
   background-color: #000;
   color: #fff;
   transition: background-color 0.5s, opacity 0.5s, transform 0.3s ease-in-out;
+  transition: 0.21s ease-in-out;
 
   &.hidden {
     transform: translateY(-100%);
   }
 
+  &:hover {
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    
+  ${Logo} {
+    color: #000;
+  }
+
+  ${MainLogo} {
+
+    color: #000;
+  }
     ${Li} {
 
       a{
-      color: #ffffff; 
+      color: #000; 
 
       .insta:hover {
         color: #e48f64;
@@ -105,6 +119,8 @@ const HeaderDiv = styled.div`
       }
     }
   }
+}
+
 `;
 
 
