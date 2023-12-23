@@ -6,7 +6,6 @@ import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
-import '../../App.scss';
 
 interface MainInfoProps {
   isScrolled: boolean;
@@ -42,8 +41,8 @@ const MainContent = styled.div`
 `;
 
 const VideoBackground = styled.video`
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 1;
   position: absolute;
@@ -85,7 +84,6 @@ const MainSection = styled.article<MainSectionProps>`
   align-items: center;
   z-index: 2;
   margin-bottom: 39rem;
-
 `;
 
 const MainInfo = styled.div<MainInfoProps> `
@@ -97,24 +95,17 @@ const MainInfo = styled.div<MainInfoProps> `
   margin: 0;
   padding: 1.2rem 1rem auto;
   position: fixed;
-  top: ${({ isScrolled }) => (isScrolled ? "0" : "auto")};
+  top: ${({ isScrolled }) => (isScrolled ? "0" : "5vh")};
   left: 0;
   right: 0;
   z-index: 100;
   background-color: #000;
   color: #fff;
   transition: transform 0.3s ease-in-out;
-  transition: 0.21s ease-in-out;
 
   &.hidden {
     transform: translateY(-100%);
   }
-
-  &:hover {
-    background-color: #fff;
-    color: #000;
-    opacity: 1;
-    }
 
   ul {
     width: 100%;
@@ -128,13 +119,6 @@ const MainInfo = styled.div<MainInfoProps> `
       align-items: center;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       cursor: pointer;
-      transition: 0.21s ease-in-out;
-      
-      &:hover {
-        opacity: 1;
-        color: #727272;
-      }
-
     }
   }
 `;
@@ -160,7 +144,7 @@ const MainPage = () => {
 
   const transitionSecond = {
     duration: 1,
-    delay: 0.5,
+    delay: 0.3,
   };
 
   const TextScroll = () => {
@@ -169,7 +153,7 @@ const MainPage = () => {
   
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
-      if (scrollPosition > 200) {
+      if (scrollPosition > 0) {
         setAnimate(false);
       } else {
         setAnimate(true);
@@ -195,8 +179,6 @@ const MainPage = () => {
   useEffect(() => {
     TextScroll();
   }, []); 
-
-
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -226,32 +208,25 @@ const MainPage = () => {
   };
 
   const ScrollToSecondPage = () => {
-    if (secondPageRef.current) {
-      scroll.scrollTo(secondPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
-  };
-  
-  const ScrollToThirdPage = () => {
-    if (thirdPageRef.current) {
-      scroll.scrollTo(thirdPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
-  };
-  
-  const ScrollToFourthdPage = () => {
-    if (fourthPageRef.current) {
-      scroll.scrollTo(fourthPageRef.current.offsetTop, {
-        duration: 300,
-        smooth: "smooth",
-      });
-    }
+      scroll.scrollTo(secondPageRef.current!.offsetTop, {
+      duration: 300,
+      smooth: "smooth",
+    });
   };
 
+  const ScrollToThirdPage = () => {
+    scroll.scrollTo(thirdPageRef.current!.offsetTop, {
+    duration: 300,
+    smooth: "smooth",
+  });
+};
+
+const ScrollToFourthdPage = () => {
+  scroll.scrollTo(fourthPageRef.current!.offsetTop, {
+  duration: 300,
+  smooth: "smooth",
+});
+};
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
@@ -259,27 +234,25 @@ const MainPage = () => {
       <VideoBackground autoPlay loop muted>
         <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
       </VideoBackground>
-        <MainTitle
+        <MainTitle           
           variants={animationUp}
           initial="hidden"
           animate={animate ? "visible" : "hidden"}
           transition={transition}>
           SEIMIN MUSIC FESTIVAL
-          <MainSubTitle
-            variants={animationUp}
-            initial="hidden"
-            animate={animate ? "visible" : "hidden"}
-            transition={transitionSecond}>
-              JAZZ / ROCK / J-MUSIC
-          </MainSubTitle>
+        <MainSubTitle
+          variants={animationUp}
+          initial="hidden"
+          animate={animate ? "visible" : "hidden"}
+          transition={transitionSecond}>JAZZ / ROCK / J-MUSIC</MainSubTitle>
         </MainTitle>
         <MainSection isScrolled={scrollPosition > 500 ? true : false}>
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
             <ul>
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
-              <li onClick={ScrollToThirdPage}>Artist</li>
-              <li onClick={ScrollToFourthdPage}>PV</li>
+              <li onClick={ScrollToThirdPage}>Programs</li>
+              <li onClick={ScrollToFourthdPage}>Artist</li>
             </ul>
           </MainInfo>
         </MainSection>
