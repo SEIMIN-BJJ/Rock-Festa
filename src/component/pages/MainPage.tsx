@@ -84,6 +84,7 @@ const MainSection = styled.article<MainSectionProps>`
   align-items: center;
   z-index: 2;
   margin-bottom: 39rem;
+
 `;
 
 const MainInfo = styled.div<MainInfoProps> `
@@ -95,17 +96,24 @@ const MainInfo = styled.div<MainInfoProps> `
   margin: 0;
   padding: 1.2rem 1rem auto;
   position: fixed;
-  top: ${({ isScrolled }) => (isScrolled ? "0" : "5vh")};
+  top: ${({ isScrolled }) => (isScrolled ? "0" : "auto")};
   left: 0;
   right: 0;
   z-index: 100;
   background-color: #000;
   color: #fff;
   transition: transform 0.3s ease-in-out;
+  transition: 0.21s ease-in-out;
 
   &.hidden {
     transform: translateY(-100%);
   }
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    opacity: 1;
+    }
 
   ul {
     width: 100%;
@@ -119,6 +127,13 @@ const MainInfo = styled.div<MainInfoProps> `
       align-items: center;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       cursor: pointer;
+      transition: 0.21s ease-in-out;
+      
+      &:hover {
+        opacity: 1;
+        color: #727272;
+      }
+
     }
   }
 `;

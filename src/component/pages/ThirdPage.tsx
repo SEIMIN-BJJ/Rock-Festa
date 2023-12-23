@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 
-const ThirdContent = styled.div`
+const ThirdContent = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -22,13 +22,17 @@ const ThirdSection = styled.article `
   flex-direction: column;
 `;
 
-
-
+const ThirdeSlide = styled.div`
+  width: 100%;
+  height: 30rem;
+  border: 1px solid #fff;
+`
 
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <ThirdContent ref={ref}>
       <ThirdSection>
+        <ThirdeSlide></ThirdeSlide>
       </ThirdSection>
     </ThirdContent>
   );
