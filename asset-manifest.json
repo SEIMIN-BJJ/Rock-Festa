@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rock-Festa-react/static/css/main.d064b089.css",
-    "main.js": "/Rock-Festa-react/static/js/main.0596e05a.js",
+    "main.js": "/Rock-Festa-react/static/js/main.86aaf91c.js",
     "static/js/787.b102d06e.chunk.js": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js",
     "static/media/ChosunCentennial_otf.otf": "/Rock-Festa-react/static/media/ChosunCentennial_otf.54881a3acbbea1be6bb4.otf",
     "static/media/Pretendard-Light.otf": "/Rock-Festa-react/static/media/Pretendard-Light.65372b5df865e8aa758a.otf",
@@ -19,11 +19,11 @@
     "static/media/SB 어그로OTF L.otf": "/Rock-Festa-react/static/media/SB 어그로OTF L.4cfda66d0d1066d77b77.otf",
     "index.html": "/Rock-Festa-react/index.html",
     "main.d064b089.css.map": "/Rock-Festa-react/static/css/main.d064b089.css.map",
-    "main.0596e05a.js.map": "/Rock-Festa-react/static/js/main.0596e05a.js.map",
+    "main.86aaf91c.js.map": "/Rock-Festa-react/static/js/main.86aaf91c.js.map",
     "787.b102d06e.chunk.js.map": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d064b089.css",
-    "static/js/main.0596e05a.js"
+    "static/js/main.86aaf91c.js"
   ]
 }
