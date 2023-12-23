@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
+import { motion } from "framer-motion";
 import Header from "component/block/Header/header";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
+import "../../App.scss";
+
 interface MainInfoProps {
   isScrolled: boolean;
 }
@@ -46,7 +49,7 @@ const VideoBackground = styled.video`
   position: absolute;
 `;
 
-const MainTitle = styled.div`
+const MainTitle = styled(motion.div)`
   width: 80%;
   height: auto;
   position: absolute;
@@ -63,7 +66,7 @@ const MainTitle = styled.div`
   z-index: 2;
 `;
 
-const MainSubTitle = styled.div`
+const MainSubTitle = styled(motion.div)`
   width: 70%;
   height: auto;
   z-index: 2;
@@ -93,7 +96,7 @@ const MainInfo = styled.div<MainInfoProps> `
   margin: 0;
   padding: 1.2rem 1rem auto;
   position: fixed;
-  top: ${({ isScrolled }) => (isScrolled ? "0" : "5vh")};
+  top: ${({ isScrolled }) => (isScrolled ? "0" : "auto")};
   left: 0;
   right: 0;
   z-index: 100;
@@ -128,6 +131,55 @@ const MainPage = () => {
   const secondPageRef = useRef<HTMLDivElement | null>(null);
   const thirdPageRef = useRef<HTMLDivElement | null>(null);
   const fourthPageRef = useRef<HTMLDivElement | null>(null);
+  const [animate, setAnimate] = useState(false);
+
+  const animationUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 1,
+    delay: 0.1,
+  };
+
+  const transitionSecond = {
+    duration: 1,
+    delay: 0.3,
+  };
+
+  const TextScroll = () => {
+    const scrollPosition = window.scrollY;
+    console.log(scrollPosition)
+  
+    if (window.innerWidth >= 768) {
+      // 웹페이지 스크롤
+      if (scrollPosition > 0) {
+        setAnimate(false);
+      } else {
+        setAnimate(true);
+      }
+    } else {
+      // 모바일 스크롤
+      if (scrollPosition > 600) {
+        setAnimate(false);
+      } else {
+        setAnimate(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", TextScroll);
+
+    return () => {
+      window.removeEventListener("scroll", TextScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    TextScroll();
+  }, []); 
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -183,18 +235,27 @@ const ScrollToFourthdPage = () => {
       <VideoBackground autoPlay loop muted>
         <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
       </VideoBackground>
-        <MainTitle>
+        <MainTitle
+          variants={animationUp}
+          initial="hidden"
+          animate={animate ? "visible" : "hidden"}
+          transition={transition}>
           SEIMIN MUSIC FESTIVAL
-        <MainSubTitle>JAZZ / ROCK / J-MUSIC</MainSubTitle>
+          <MainSubTitle
+            variants={animationUp}
+            initial="hidden"
+            animate={animate ? "visible" : "hidden"}
+            transition={transitionSecond}>
+              JAZZ / ROCK / J-MUSIC
+          </MainSubTitle>
         </MainTitle>
         <MainSection isScrolled={scrollPosition > 500 ? true : false}>
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
             <ul>
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
-              <li onClick={ScrollToThirdPage}>Programs</li>
-              <li onClick={ScrollToFourthdPage}>Artist</li>
-
+              <li onClick={ScrollToThirdPage}>Artist</li>
+              <li onClick={ScrollToFourthdPage}>PV</li>
             </ul>
           </MainInfo>
         </MainSection>
