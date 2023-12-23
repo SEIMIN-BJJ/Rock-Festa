@@ -40,8 +40,8 @@ const MainContent = styled.div`
 `;
 
 const VideoBackground = styled.video`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: auto;
   object-fit: cover;
   z-index: 1;
   position: absolute;
@@ -202,7 +202,6 @@ const MainPage = () => {
               <li onClick={ScrollToSecondPage}>Information</li>
               <li onClick={ScrollToThirdPage}>Programs</li>
               <li onClick={ScrollToFourthdPage}>Artist</li>
-
             </ul>
           </MainInfo>
         </MainSection>
