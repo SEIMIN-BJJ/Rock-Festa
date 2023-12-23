@@ -85,6 +85,7 @@ const MainSection = styled.article<MainSectionProps>`
   align-items: center;
   z-index: 2;
   margin-bottom: 39rem;
+  background-color: ${({ isScrolled }) => (isScrolled ? "#000" : "transparent")};
 `;
 
 const MainInfo = styled.div<MainInfoProps> `
@@ -97,12 +98,14 @@ const MainInfo = styled.div<MainInfoProps> `
   padding: 1.2rem 1rem auto;
   position: fixed;
   top: ${({ isScrolled }) => (isScrolled ? "0" : "auto")};
+  background-color: ${({ isScrolled }) => (isScrolled ? "#fff" : "#000")};
+  color: ${({ isScrolled }) => (isScrolled ? "#000" : "#fff")};
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: #000;
   color: #fff;
   transition: transform 0.3s ease-in-out;
+  transition: 0.21s ease-in-out;
 
   &.hidden {
     transform: translateY(-100%);
@@ -112,6 +115,7 @@ const MainInfo = styled.div<MainInfoProps> `
     width: 100%;
     display: flex;
     justify-content: center;
+    color: ${({ isScrolled }) => (isScrolled ? "#000" : "#fff")};
 
     li {
       width: 10%;
@@ -119,9 +123,15 @@ const MainInfo = styled.div<MainInfoProps> `
       justify-content: center;
       align-items: center;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      transition: 0.21s ease-in-out;
       cursor: pointer;
+
+      &:hover {
+
+        color:#ccc;
+      }
+      }
     }
-  }
 `;
 
 const MainPage = () => {
