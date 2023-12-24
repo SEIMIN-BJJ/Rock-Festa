@@ -1,5 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import FearAndIMG from "../assets/images/fear-and-loathing.webp";
 import MaximumIMG from "../assets/images/maximum-the-hormone.webp";
 import SheenaRingoIMG from "../assets/images/sheena-ringo.jpeg";
 import SoilPimpIMG from "../assets/images/soil-pimp-sessons.jpeg";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 
 const ThirdContent = styled.section`
@@ -21,7 +22,7 @@ const ThirdContent = styled.section`
   align-items: center;
   margin: auto;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #000;
 `;
 
 const ThirdSection = styled(motion.article)`
@@ -36,7 +37,7 @@ const ThirdSection = styled(motion.article)`
 const ThirdTitle = styled(motion.h4)`
   width: 50%;
   height: 6rem;
-  color: #000;
+  color: #fff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   justify-content: center;
   align-items: center;
@@ -50,7 +51,7 @@ const SliderContainer = styled(motion.div)`
 `;
 
 const SliderItem = styled(motion.div)<{ Images: string }>`
-  width: 10%;
+  width: 100%; /* 수정: 10% -> 100% */
   height: 20rem;
   background-size: contain;
   background-position: center center;
@@ -58,27 +59,20 @@ const SliderItem = styled(motion.div)<{ Images: string }>`
   background-image: url(${(props) => props.Images});
 `;
 
-const CustomNextArrow: React.FC<any> = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style,zIndex:'2',position:'absolute', display: "flex",justifyContent:'center',alignItems:'center', background: "#ccc",width:'4rem', height:'4rem',fontSize:'5rem'}}
-      onClick={onClick}
-    />
-  );
-};
-
-const CustomPrevArrow: React.FC<any> = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style,zIndex:'2',position:'absolute', display: "flex",justifyContent:'center',alignItems:'center', background: "#ccc",width:'4rem', height:'4rem',fontSize:'5rem'}}
-      onClick={onClick}
-    />
-  );
-};
+const CustomArrow = styled.div`
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.21s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  &:hover {
+    opacity: 1;
+    color: #ccc;
+  }
+`;
 
 const images = [ 
   RedHotIMG,
@@ -91,6 +85,10 @@ const images = [
 ];
 
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
+
+  interface ArrowProps {
+    onClick?: () => void;
+  }
   const [animate, setAnimate] = useState(false);
 
   const animationLeft = {
@@ -113,17 +111,28 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     delay: 0.3,
   };
 
+  const PrevArrow = ({ onClick }: ArrowProps) => (
+    <CustomArrow className="slick-prev" onClick={onClick}>
+      <FaChevronLeft />
+    </CustomArrow>
+  );
+  
+  const NextArrow = ({ onClick }: ArrowProps) => (
+    <CustomArrow className="slick-next" onClick={onClick}>
+      <FaChevronRight />
+    </CustomArrow>
+  );
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    nextArrow: <CustomNextArrow />, 
-    prevArrow: <CustomPrevArrow />, 
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
 
   const handleScroll = () => {
