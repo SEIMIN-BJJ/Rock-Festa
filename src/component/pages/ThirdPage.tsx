@@ -1,8 +1,8 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
+import Slider from 'react-slick';
+import '../../slick-theme.css';
+import '../../slick.css';
 import { motion } from 'framer-motion';
 import RedHotIMG from '../assets/images/red-hot-chili-peppers.jpeg';
 import AskingIMG from "../assets/images/asking-alexandria.jpeg";
@@ -32,6 +32,7 @@ const ThirdSection = styled(motion.article)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 5rem;
 `;
 
 const ThirdTitle = styled(motion.h4)`
@@ -47,11 +48,10 @@ const ThirdTitle = styled(motion.h4)`
 `;
 
 const SliderContainer = styled(motion.div)`
-  width: 60%;
+  width: 80%;
 `;
 
 const SliderItem = styled(motion.div)<{ Images: string }>`
-  width: 100%; /* 수정: 10% -> 100% */
   height: 20rem;
   background-size: contain;
   background-position: center center;
@@ -60,19 +60,28 @@ const SliderItem = styled(motion.div)<{ Images: string }>`
 `;
 
 const CustomArrow = styled.div`
+  width: 5rem;
+  height: 3rem;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
   transition: 0.21s ease-in-out;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  
+  top: 0;
+  transform: translateY(-150%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
   &:hover {
     opacity: 1;
     color: #ccc;
+    background-color: #000000;
   }
 `;
+
 
 const images = [ 
   RedHotIMG,
@@ -124,13 +133,14 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   );
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
+    arrows: true, 
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
