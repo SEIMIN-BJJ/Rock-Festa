@@ -53,7 +53,7 @@ const MainTitle = styled(motion.div)`
   height: auto;
   position: absolute;
   font-size: 5rem;
-  color: #fff;
+  color: #ffffffcc;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   justify-content: flex-start;
@@ -70,7 +70,7 @@ const MainSubTitle = styled(motion.div)`
   height: auto;
   z-index: 2;
   font-size: 2rem;
-  color: #fff;
+  color: #ffffffcc;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -237,6 +237,7 @@ const ScrollToFourthdPage = () => {
   smooth: "smooth",
 });
 };
+
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
@@ -261,8 +262,8 @@ const ScrollToFourthdPage = () => {
             <ul>
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
-              <li onClick={ScrollToThirdPage}>Programs</li>
-              <li onClick={ScrollToFourthdPage}>Artist</li>
+              <li onClick={ScrollToThirdPage}>Artist</li>
+              <li onClick={ScrollToFourthdPage}>PV</li>
             </ul>
           </MainInfo>
         </MainSection>
