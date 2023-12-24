@@ -12,6 +12,7 @@ import MaximumIMG from "../assets/images/maximum-the-hormone.webp";
 import SheenaRingoIMG from "../assets/images/sheena-ringo.jpeg";
 import SoilPimpIMG from "../assets/images/soil-pimp-sessons.jpeg";
 
+
 const ThirdContent = styled.section`
   width: 100vw;
   height: 100vh;
@@ -20,7 +21,7 @@ const ThirdContent = styled.section`
   align-items: center;
   margin: auto;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #000;
 `;
 
 const ThirdSection = styled(motion.article)`
@@ -35,7 +36,7 @@ const ThirdSection = styled(motion.article)`
 const ThirdTitle = styled(motion.h4)`
   width: 50%;
   height: 6rem;
-  color: #000;
+  color: #fff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   justify-content: center;
   align-items: center;
@@ -50,25 +51,11 @@ const SliderContainer = styled(motion.div)`
 
 const SliderItem = styled(motion.div)<{ Images: string }>`
   width: 10%;
-  height: 70vh;
+  height: 20rem;
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url(${(props) => props.Images});
-  border: 1px solid #000;
-`;
-
-const Arrow = styled.div`
-  width: 100%;
-  height: 70vh;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #000;
-  font-size: 3rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
 `;
 
 const images = [ 
@@ -104,6 +91,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     delay: 0.3,
   };
 
+
   const settings = {
     dots: true,
     infinite: true,
@@ -112,12 +100,8 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    nextArrow: <Arrow></Arrow>,
-    prevArrow: <Arrow></Arrow>,
   };
 
-
-  
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
@@ -171,10 +155,6 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
           <SliderItem
             key={index}
             Images={image}
-            variants={animationRight}
-            initial="hidden"
-            animate={animate ? 'visible' : 'hidden'}
-            transition={transitionSlide} 
           />
         ))}
       </Slider>
