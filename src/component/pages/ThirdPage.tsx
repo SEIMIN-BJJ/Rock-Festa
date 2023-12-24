@@ -21,7 +21,7 @@ const ThirdContent = styled.section`
   align-items: center;
   margin: auto;
   overflow: hidden;
-  background-color: #000;
+  background-color: #fff;
 `;
 
 const ThirdSection = styled(motion.article)`
@@ -36,7 +36,7 @@ const ThirdSection = styled(motion.article)`
 const ThirdTitle = styled(motion.h4)`
   width: 50%;
   height: 6rem;
-  color: #fff;
+  color: #000;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   justify-content: center;
   align-items: center;
@@ -57,6 +57,28 @@ const SliderItem = styled(motion.div)<{ Images: string }>`
   background-repeat: no-repeat;
   background-image: url(${(props) => props.Images});
 `;
+
+const CustomNextArrow: React.FC<any> = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,zIndex:'2',position:'absolute', display: "flex",justifyContent:'center',alignItems:'center', background: "#ccc",width:'4rem', height:'4rem',fontSize:'5rem'}}
+      onClick={onClick}
+    />
+  );
+};
+
+const CustomPrevArrow: React.FC<any> = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style,zIndex:'2',position:'absolute', display: "flex",justifyContent:'center',alignItems:'center', background: "#ccc",width:'4rem', height:'4rem',fontSize:'5rem'}}
+      onClick={onClick}
+    />
+  );
+};
 
 const images = [ 
   RedHotIMG,
@@ -100,6 +122,8 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
+    nextArrow: <CustomNextArrow />, 
+    prevArrow: <CustomPrevArrow />, 
   };
 
   const handleScroll = () => {
