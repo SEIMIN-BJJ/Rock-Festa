@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rock-Festa-react/static/css/main.2696ab30.css",
-    "main.js": "/Rock-Festa-react/static/js/main.85ed8e68.js",
+    "main.js": "/Rock-Festa-react/static/js/main.b07c6dd1.js",
     "static/js/787.b102d06e.chunk.js": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js",
     "static/media/ChosunCentennial_otf.otf": "/Rock-Festa-react/static/media/ChosunCentennial_otf.54881a3acbbea1be6bb4.otf",
     "static/media/Pretendard-Light.otf": "/Rock-Festa-react/static/media/Pretendard-Light.65372b5df865e8aa758a.otf",
@@ -13,24 +13,24 @@
     "static/media/Pretendard-Black.otf": "/Rock-Festa-react/static/media/Pretendard-Black.ed4fa19a4df95cb6740b.otf",
     "static/media/Pretendard-ExtraLight.otf": "/Rock-Festa-react/static/media/Pretendard-ExtraLight.c1677723ce338097648f.otf",
     "static/media/Pretendard-Thin.otf": "/Rock-Festa-react/static/media/Pretendard-Thin.e45abc28d4828e92dd10.otf",
+    "static/media/cross.png": "/Rock-Festa-react/static/media/cross.5f92e93108e6f793c16f.png",
+    "static/media/redhot.png": "/Rock-Festa-react/static/media/redhot.441f13fb49a4bafcc1c6.png",
+    "static/media/soil.png": "/Rock-Festa-react/static/media/soil.7756998a6e0d7a990445.png",
+    "static/media/asking.png": "/Rock-Festa-react/static/media/asking.74b92da83cd8597f54d6.png",
+    "static/media/maximum.png": "/Rock-Festa-react/static/media/maximum.beb6b774967c0b208de3.png",
+    "static/media/fear.png": "/Rock-Festa-react/static/media/fear.a77b9f63ea048478d52d.png",
     "static/media/SB 어그로OTF B.otf": "/Rock-Festa-react/static/media/SB 어그로OTF B.fac7e68fc73cf64ea2fe.otf",
     "static/media/SB 어그로OTF M.otf": "/Rock-Festa-react/static/media/SB 어그로OTF M.780ac39bb4c413cd8e16.otf",
     "static/media/SB 어그로OTF L.otf": "/Rock-Festa-react/static/media/SB 어그로OTF L.4cfda66d0d1066d77b77.otf",
-    "static/media/cross-faith.jpeg": "/Rock-Festa-react/static/media/cross-faith.ea40bbbad61cb2ca991c.jpeg",
-    "static/media/soil-pimp-sessons.jpeg": "/Rock-Festa-react/static/media/soil-pimp-sessons.2916c81bbb6fe60cbfe2.jpeg",
-    "static/media/red-hot-chili-peppers.jpeg": "/Rock-Festa-react/static/media/red-hot-chili-peppers.0d1dca4d90b562e6024d.jpeg",
+    "static/media/ringgo.png": "/Rock-Festa-react/static/media/ringgo.5a4b738e884dfc408b29.png",
     "static/media/maxresdefault.jpg": "/Rock-Festa-react/static/media/maxresdefault.f792c815e451931fbf97.jpg",
-    "static/media/asking-alexandria.jpeg": "/Rock-Festa-react/static/media/asking-alexandria.ab62cf9403bae13ce983.jpeg",
-    "static/media/sheena-ringo.jpeg": "/Rock-Festa-react/static/media/sheena-ringo.2a594a3508a9738567ed.jpeg",
-    "static/media/fear-and-loathing.webp": "/Rock-Festa-react/static/media/fear-and-loathing.81efd2e12fdfa99a6e78.webp",
-    "static/media/maximum-the-hormone.webp": "/Rock-Festa-react/static/media/maximum-the-hormone.0dbd490e941479fb62f3.webp",
     "index.html": "/Rock-Festa-react/index.html",
     "main.2696ab30.css.map": "/Rock-Festa-react/static/css/main.2696ab30.css.map",
-    "main.85ed8e68.js.map": "/Rock-Festa-react/static/js/main.85ed8e68.js.map",
+    "main.b07c6dd1.js.map": "/Rock-Festa-react/static/js/main.b07c6dd1.js.map",
     "787.b102d06e.chunk.js.map": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2696ab30.css",
-    "static/js/main.85ed8e68.js"
+    "static/js/main.b07c6dd1.js"
   ]
 }
