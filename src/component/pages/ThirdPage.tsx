@@ -59,6 +59,7 @@ const ImageWrapper = styled.div`
   &:hover {
     transform: scale(1.1);
     z-index: 1;
+    opacity: 1;
   }
 `;
 
