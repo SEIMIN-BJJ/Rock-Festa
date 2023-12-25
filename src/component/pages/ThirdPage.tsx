@@ -163,11 +163,11 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 400,
+    speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
