@@ -24,7 +24,7 @@ const SecondSection = styled(motion.article) `
 `;
 
 const SecondTitle = styled(motion.h4) `
-    width: 60%;
+    width: 100%;
     color:#000;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -148,7 +148,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <SecondContent ref={ref}>
       <SecondSection           
-          variants={animationLeft}
+          variants={animationRight}
           initial="hidden"
           animate={animate ? "visible" : "hidden"}
           transition={transition}>
@@ -182,4 +182,3 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
 });
 
 export default SecondPage;
-
