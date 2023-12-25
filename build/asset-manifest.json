@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rock-Festa-react/static/css/main.2696ab30.css",
-    "main.js": "/Rock-Festa-react/static/js/main.a49839f6.js",
+    "main.js": "/Rock-Festa-react/static/js/main.359382a1.js",
     "static/js/787.b102d06e.chunk.js": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js",
     "static/media/ChosunCentennial_otf.otf": "/Rock-Festa-react/static/media/ChosunCentennial_otf.54881a3acbbea1be6bb4.otf",
     "static/media/Pretendard-Light.otf": "/Rock-Festa-react/static/media/Pretendard-Light.65372b5df865e8aa758a.otf",
@@ -26,11 +26,11 @@
     "static/media/maxresdefault.jpg": "/Rock-Festa-react/static/media/maxresdefault.f792c815e451931fbf97.jpg",
     "index.html": "/Rock-Festa-react/index.html",
     "main.2696ab30.css.map": "/Rock-Festa-react/static/css/main.2696ab30.css.map",
-    "main.a49839f6.js.map": "/Rock-Festa-react/static/js/main.a49839f6.js.map",
+    "main.359382a1.js.map": "/Rock-Festa-react/static/js/main.359382a1.js.map",
     "787.b102d06e.chunk.js.map": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2696ab30.css",
-    "static/js/main.a49839f6.js"
+    "static/js/main.359382a1.js"
   ]
 }
