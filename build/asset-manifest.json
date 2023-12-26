@@ -1,7 +1,20 @@
 {
   "files": {
     "main.css": "/Rock-Festa-react/static/css/main.2696ab30.css",
-    "main.js": "/Rock-Festa-react/static/js/main.359382a1.js",
+    "main.js": "/Rock-Festa-react/static/js/main.1e9ec390.js",
+    "reactPlayerYouTube.js": "/Rock-Festa-react/static/js/reactPlayerYouTube.35e04a90.chunk.js",
+    "reactPlayerSoundCloud.js": "/Rock-Festa-react/static/js/reactPlayerSoundCloud.7b3c1f0d.chunk.js",
+    "reactPlayerVimeo.js": "/Rock-Festa-react/static/js/reactPlayerVimeo.a9e847eb.chunk.js",
+    "reactPlayerFacebook.js": "/Rock-Festa-react/static/js/reactPlayerFacebook.a8c9ef5a.chunk.js",
+    "reactPlayerStreamable.js": "/Rock-Festa-react/static/js/reactPlayerStreamable.448fb185.chunk.js",
+    "reactPlayerWistia.js": "/Rock-Festa-react/static/js/reactPlayerWistia.056871fb.chunk.js",
+    "reactPlayerTwitch.js": "/Rock-Festa-react/static/js/reactPlayerTwitch.e9ea8902.chunk.js",
+    "reactPlayerDailyMotion.js": "/Rock-Festa-react/static/js/reactPlayerDailyMotion.3c4b2a1f.chunk.js",
+    "reactPlayerMixcloud.js": "/Rock-Festa-react/static/js/reactPlayerMixcloud.35d33f04.chunk.js",
+    "reactPlayerVidyard.js": "/Rock-Festa-react/static/js/reactPlayerVidyard.5943aeb3.chunk.js",
+    "reactPlayerKaltura.js": "/Rock-Festa-react/static/js/reactPlayerKaltura.47649379.chunk.js",
+    "reactPlayerFilePlayer.js": "/Rock-Festa-react/static/js/reactPlayerFilePlayer.38665da2.chunk.js",
+    "reactPlayerPreview.js": "/Rock-Festa-react/static/js/reactPlayerPreview.eb1bf0d7.chunk.js",
     "static/js/787.b102d06e.chunk.js": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js",
     "static/media/ChosunCentennial_otf.otf": "/Rock-Festa-react/static/media/ChosunCentennial_otf.54881a3acbbea1be6bb4.otf",
     "static/media/Pretendard-Light.otf": "/Rock-Festa-react/static/media/Pretendard-Light.65372b5df865e8aa758a.otf",
@@ -26,11 +39,24 @@
     "static/media/maxresdefault.jpg": "/Rock-Festa-react/static/media/maxresdefault.f792c815e451931fbf97.jpg",
     "index.html": "/Rock-Festa-react/index.html",
     "main.2696ab30.css.map": "/Rock-Festa-react/static/css/main.2696ab30.css.map",
-    "main.359382a1.js.map": "/Rock-Festa-react/static/js/main.359382a1.js.map",
+    "main.1e9ec390.js.map": "/Rock-Festa-react/static/js/main.1e9ec390.js.map",
+    "reactPlayerYouTube.35e04a90.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerYouTube.35e04a90.chunk.js.map",
+    "reactPlayerSoundCloud.7b3c1f0d.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerSoundCloud.7b3c1f0d.chunk.js.map",
+    "reactPlayerVimeo.a9e847eb.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerVimeo.a9e847eb.chunk.js.map",
+    "reactPlayerFacebook.a8c9ef5a.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerFacebook.a8c9ef5a.chunk.js.map",
+    "reactPlayerStreamable.448fb185.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerStreamable.448fb185.chunk.js.map",
+    "reactPlayerWistia.056871fb.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerWistia.056871fb.chunk.js.map",
+    "reactPlayerTwitch.e9ea8902.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerTwitch.e9ea8902.chunk.js.map",
+    "reactPlayerDailyMotion.3c4b2a1f.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerDailyMotion.3c4b2a1f.chunk.js.map",
+    "reactPlayerMixcloud.35d33f04.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerMixcloud.35d33f04.chunk.js.map",
+    "reactPlayerVidyard.5943aeb3.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerVidyard.5943aeb3.chunk.js.map",
+    "reactPlayerKaltura.47649379.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerKaltura.47649379.chunk.js.map",
+    "reactPlayerFilePlayer.38665da2.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerFilePlayer.38665da2.chunk.js.map",
+    "reactPlayerPreview.eb1bf0d7.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerPreview.eb1bf0d7.chunk.js.map",
     "787.b102d06e.chunk.js.map": "/Rock-Festa-react/static/js/787.b102d06e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2696ab30.css",
-    "static/js/main.359382a1.js"
+    "static/js/main.1e9ec390.js"
   ]
 }
