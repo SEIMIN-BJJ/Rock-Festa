@@ -12,6 +12,7 @@ import RingoIMG from '../assets/images/ringgo.png';
 import SoilPimpIMG from '../assets/images/soil.png';
 import '../../slick-theme.css';
 import '../../slick.css';
+import '../../App.scss';
 
 const ThirdContent = styled.section`
   width: 100vw;
@@ -46,11 +47,11 @@ const ThirdTitle = styled(motion.h4)`
   letter-spacing: 2rem;
 `;
 
-const SliderContainer = styled(motion.div)`
+const ThirdSliderContainer = styled(motion.div)`
   width: 80%;
 `;
 
-const ImageWrapper = styled.div`
+const ThirdImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -63,7 +64,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ImageText = styled.div`
+const ThirdImageText = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -72,18 +73,19 @@ const ImageText = styled.div`
   padding: 1rem;
   letter-spacing: 0.05rem;
   text-align: center;
-  opacity: 0;
+  opacity: 0.2;
   transition: opacity 0.3s ease-in-out;
   z-index: 2;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem;
 
-  ${ImageWrapper}:hover & {
+  ${ThirdImageWrapper}:hover & {
     opacity: 1;
     z-index: 2;
   }
 `;
 
-const SliderItem = styled(motion.div)<{ Images: string }>`
+const ThirdSliderItem = styled(motion.div)<{ Images: string }>`
   height: 20rem;
   background-size: contain;
   background-position: center center;
@@ -93,7 +95,7 @@ const SliderItem = styled(motion.div)<{ Images: string }>`
   margin: 0 0.3rem;
 `;
 
-const CustomArrow = styled.div`
+const ThirdCustomArrow = styled.div`
   width: 4rem;
   height: 3rem;
   font-size: 2rem;
@@ -150,25 +152,25 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-    <CustomArrow className="slick-prev" onClick={onClick}>
+    <ThirdCustomArrow className="slick-prev" onClick={onClick}>
       <FaChevronLeft />
-    </CustomArrow>
+    </ThirdCustomArrow>
   );
 
   const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-    <CustomArrow className="slick-next" onClick={onClick}>
+    <ThirdCustomArrow className="slick-next" onClick={onClick}>
       <FaChevronRight />
-    </CustomArrow>
+    </ThirdCustomArrow>
   );
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -215,7 +217,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
         >
           ARTIST
         </ThirdTitle>
-        <SliderContainer
+        <ThirdSliderContainer
           ref={ref}
           variants={animationRight}
           initial="hidden"
@@ -224,14 +226,14 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
         >
           <Slider {...settings}>
           {images.map((item, index) => (
-            <ImageWrapper key={index}>
-              <SliderItem Images={item.img}>
-                <ImageText>{item.text}</ImageText>
-              </SliderItem>
-            </ImageWrapper>
+            <ThirdImageWrapper key={index}>
+              <ThirdSliderItem Images={item.img}>
+                <ThirdImageText>{item.text}</ThirdImageText>
+              </ThirdSliderItem>
+            </ThirdImageWrapper>
           ))}
           </Slider>
-        </SliderContainer>
+        </ThirdSliderContainer>
       </ThirdSection>
     </ThirdContent>
   );

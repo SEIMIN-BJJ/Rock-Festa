@@ -150,12 +150,12 @@ const MainPage = () => {
 
   const transition = {
     duration: 1,
-    delay: 0.1,
+    delay: 0.3,
   };
 
   const transitionSecond = {
     duration: 1,
-    delay: 0.3,
+    delay: 0.5,
   };
 
   const TextScroll = () => {
