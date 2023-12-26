@@ -150,12 +150,12 @@ const MainPage = () => {
 
   const transition = {
     duration: 1,
-    delay: 0.1,
+    delay: 0.3,
   };
 
   const transitionSecond = {
     duration: 1,
-    delay: 0.3,
+    delay: 0.5,
   };
 
   const TextScroll = () => {
@@ -266,7 +266,7 @@ const ScrollToFourthdPage = () => {
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
               <li onClick={ScrollToThirdPage}>Artist</li>
-              <li onClick={ScrollToFourthdPage}>PV</li>
+              <li onClick={ScrollToFourthdPage}>LIVE</li>
             </ul>
           </MainInfo>
         </MainSection>

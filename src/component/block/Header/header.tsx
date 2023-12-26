@@ -150,25 +150,25 @@ const HeaderComp = () => {
           <Ul>
           <Li>
               <a 
-              target="_blank"
-              rel="noopener noreferrer"
-              href="/">
+              // target="_blank"
+              // rel="noopener noreferrer"
+              href="/Rock-Festa-react">
                 <FaInstagram className="insta" />
               </a>
             </Li>
             <Li>
               <a 
-              target="_blank"
-              rel="noopener noreferrer"
-              href="/">
+              // target="_blank"
+              // rel="noopener noreferrer"
+              href="/Rock-Festa-react">
                 <FaFacebook className="mail" />
               </a>
             </Li>
             <Li>
               <a                       
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer">
+              // target="_blank"
+              // rel="noopener noreferrer"
+              href="/Rock-Festa-react">
                 <FaYoutube className="youtube"/>
               </a>
             </Li>
