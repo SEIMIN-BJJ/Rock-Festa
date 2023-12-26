@@ -266,7 +266,7 @@ const ScrollToFourthdPage = () => {
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
               <li onClick={ScrollToThirdPage}>Artist</li>
-              <li onClick={ScrollToFourthdPage}>PV</li>
+              <li onClick={ScrollToFourthdPage}>LIVE</li>
             </ul>
           </MainInfo>
         </MainSection>

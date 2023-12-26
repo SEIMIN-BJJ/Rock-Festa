@@ -1,6 +1,7 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
+import ModalInformation from 'component/block/Modal/ModalInfmation';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import RedHotIMG from '../assets/images/redhot.png';
@@ -130,6 +131,8 @@ const images = [
 
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
   const [animate, setAnimate] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedArtist, setSelectedArtist] = useState<{ img: string; text: string } | null>(null);
 
   const animationLeft = {
     hidden: { opacity: 0, x: -200 },
@@ -206,6 +209,11 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     handleScroll();
   }, []);
 
+  const handleImageClick = (artist: { img: string; text: string }) => {
+    setSelectedArtist(artist);
+    setModalOpen(true);
+  };
+  
   return (
     <ThirdContent ref={ref}>
       <ThirdSection>
@@ -224,17 +232,24 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
           animate={animate ? 'visible' : 'hidden'}
           transition={transitionSlide}
         >
-          <Slider {...settings}>
+        <Slider {...settings}>
           {images.map((item, index) => (
-            <ThirdImageWrapper key={index}>
+            <ThirdImageWrapper key={index} onClick={() => handleImageClick(item)}>
               <ThirdSliderItem Images={item.img}>
                 <ThirdImageText>{item.text}</ThirdImageText>
               </ThirdSliderItem>
             </ThirdImageWrapper>
           ))}
-          </Slider>
+        </Slider>
         </ThirdSliderContainer>
       </ThirdSection>
+
+      <ModalInformation
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        artistName={selectedArtist ? selectedArtist.text : ''}
+        artistDescription="언제쓰냐"
+      />
     </ThirdContent>
   );
 });

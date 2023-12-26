@@ -1,7 +1,7 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import ModalVideo from 'component/block/Modal/ModalVideo';
+import Modal from 'component/block/Modal/ModalVideo';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -24,7 +24,7 @@ const FourthContent = styled.section`
   align-items: center;
   margin: auto;
   overflow: hidden;
-  background-color: #000;
+  background-color: #fff;
 `;
 
 const FourthSection = styled(motion.article)`
@@ -40,7 +40,7 @@ const FourthSection = styled(motion.article)`
 const FourthTitle = styled(motion.h4)`
   width: 50%;
   height: 6rem;
-  color: #fff;
+  color: #000;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ const FourthImageText = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  color: #fff;
+  color: #000;
   padding: 1rem;
   letter-spacing: 0.05rem;
   text-align: center;
@@ -101,7 +101,7 @@ const FourthCustomArrow = styled.div`
   width: 4rem;
   height: 3rem;
   font-size: 2rem;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   transition: 0.21s ease-in-out;
   position: absolute;
@@ -169,7 +169,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
   );
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 3,
@@ -251,7 +251,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
           animate={animate ? 'visible' : 'hidden'}
           transition={transition}
         >
-          PV
+          LIVE
         </FourthTitle>
         <FourthSliderContainer
           ref={ref}
@@ -271,7 +271,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
           </Slider>
         </FourthSliderContainer>
       </FourthSection>
-      {modalOpen && <ModalVideo onClose={closeModal} videoUrl={selectedVideo} />}
+      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />}
     </FourthContent>
   );
 });

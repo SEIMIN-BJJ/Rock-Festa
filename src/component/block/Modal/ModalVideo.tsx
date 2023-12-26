@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import ReactPlayer from 'react-player';
 
 interface ModalProps {
   onClose: () => void;
@@ -22,28 +22,19 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   width: 70%;
   height: 80%;
-  background: #ffffff80;
+  background: #171717;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Modal = ({ onClose, videoUrl }: ModalProps) => {
-  const renderVideo = () => {
-    if (videoUrl) {
-      return <div dangerouslySetInnerHTML={{ __html: videoUrl }} />;
-    }
-    return null;
-  };
-
-  return ReactDOM.createPortal(
+  return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(event) => event.stopPropagation()}>
-        {renderVideo()}
-        <button onClick={onClose}></button>
+        <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
       </ModalContent>
-    </ModalOverlay>,
-    document.body
+    </ModalOverlay>
   );
 };
 
