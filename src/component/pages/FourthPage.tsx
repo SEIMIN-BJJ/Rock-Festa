@@ -125,7 +125,7 @@ const images = [
   { img: CrossFaithIMG, text: 'CROSS FAITH',videoId: 'PhmwDSYqAeE' },
   { img: FearAndIMG, text: 'FEAR AND LOATHING IN LASVEGAS',videoId: '29IATMmQKXE' },
   { img: MaximumIMG, text: 'MAXIMUM THE HORMONE',videoId: '5vFqVhkBIdI' },
-  { img: RingoIMG, text: 'SHIINA RINGO',videoId: 'IZs1-CiqUj4' },
+  { img: RingoIMG, text: 'SHIINA RINGO',videoId: 'diP0bYi9kZk' },
   { img: SoilPimpIMG, text: 'SOIL & PIMP SESSIONS',videoId: 'Jzt7feQTlxU' },
 
 ];
@@ -217,10 +217,10 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
   
     try {
       const response = await axios.get(apiUrl);
-      console.log('Video Info:', response.data);
+      console.log('유튜브 정보:', response.data);
       return response.data;
     } catch (error) {
-      console.error('Error fetching YouTube video:', error);
+      console.error('유튜브 에러:', error);
       return null;
     }
   };
