@@ -221,7 +221,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     setModalOpen(true);
   };
 
-const ArtistDescription = (artistName: string): string => {
+const ArtistDescription = (artistName: string) => {
   switch (artistName) {
     case 'RED HOT CHILI PEPPERS':
       return `
