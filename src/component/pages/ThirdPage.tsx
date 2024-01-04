@@ -196,7 +196,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
         setAnimate(false);
       }
     } else {
-      if (scrollPosition > 600) {
+      if (scrollPosition > 1600) {
         setAnimate(false);
       } else {
         setAnimate(true);

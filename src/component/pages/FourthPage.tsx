@@ -234,10 +234,10 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
         setAnimate(false);
       }
     } else {
-      if (scrollPosition > 600) {
-        setAnimate(false);
-      } else {
+      if (scrollPosition > 1800) {
         setAnimate(true);
+      } else {
+        setAnimate(false);
       }
     }
   };

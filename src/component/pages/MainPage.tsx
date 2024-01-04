@@ -39,6 +39,10 @@ const MainContent = styled.div`
   align-items: center;
   margin: auto;
   overflow: hidden;
+
+@media screen and (max-width: 640px) {
+  width: 100%;
+}
 `;
 
 const VideoBackground = styled.video`
@@ -47,6 +51,7 @@ const VideoBackground = styled.video`
   object-fit: cover;
   z-index: 1;
   position: absolute;
+
 `;
 
 const MainTitle = styled(motion.div)`
