@@ -120,14 +120,57 @@ const FourthCustomArrow = styled.div`
 `;
 
 const images = [
-  { img: RedHotIMG, text: 'RED HOT CHILI PEPPERS',videoId: 'U4H7O9toY9g' },
-  { img: AskingIMG, text: 'ASKING ALEXANDRIA',videoId: '4AH54K4N87w' },
-  { img: CrossFaithIMG, text: 'CROSS FAITH',videoId: 'PhmwDSYqAeE' },
-  { img: FearAndIMG, text: 'FEAR AND LOATHING IN LASVEGAS',videoId: '29IATMmQKXE' },
-  { img: MaximumIMG, text: 'MAXIMUM THE HORMONE',videoId: '5vFqVhkBIdI' },
-  { img: RingoIMG, text: 'SHIINA RINGO',videoId: 'diP0bYi9kZk' },
-  { img: SoilPimpIMG, text: 'SOIL & PIMP SESSIONS',videoId: 'Jzt7feQTlxU' },
+  { img: RedHotIMG, text: 'RED HOT CHILI PEPPERS' },
+  { img: AskingIMG, text: 'ASKING ALEXANDRIA' },
+  { img: CrossFaithIMG, text: 'CROSS FAITH' },
+  { img: FearAndIMG, text: 'FEAR AND LOATHING IN LASVEGAS' },
+  { img: MaximumIMG, text: 'MAXIMUM THE HORMONE' },
+  { img: RingoIMG, text: 'SHIINA RINGO' },
+  { img: SoilPimpIMG, text: 'SOIL & PIMP SESSIONS'},
 
+];
+
+const artists = [
+  {
+    name: 'RED HOT CHILI PEPPERS',
+    videoIds: ['U4H7O9toY9g', 't5ht7o5r4iQ', 'F23e9aSugL8','8DyziWtkfBw','Sb5aq5HcS1A'],
+    img: RedHotIMG,
+  },
+  {
+    name: 'ASKING ALEXANDRIA',
+    videoIds: ['4AH54K4N87w', 'pFZSI-RX4YA', '4SRB7Fsq3fQ','VX0Bu_klgvo','tQblSS2kl4Q'],
+    img: AskingIMG,
+  },
+
+  {
+    name: 'CROSS FAITH',
+    videoIds: ['PhmwDSYqAeE', 'fVB0XINLj-w', 'ZxSx2WHA_0E','cGJfO3P4s04','4_8-wfZkI0Q','BT4env-Tw2o'],
+    img: CrossFaithIMG,
+  },
+
+  {
+    name: 'FEAR AND LOATHING IN LASVEGAS',
+    videoIds: ['D-SQqppuGvc', '2k55xXm0ido', 'KdYms5pRwS4','xKJrRuVASfs','9kXOPLZ-Hj4'],
+    img: FearAndIMG,
+  },
+
+  {
+    name: 'MAXIMUM THE HORMONE',
+    videoIds: ['MmfUyyUL07A', 'IC-wDpwzEt4', 'm77ykMf6bM0','5vFqVhkBIdI','beN5ep5MrdY'],
+    img: MaximumIMG,
+  },
+
+  {
+    name: 'SHIINA RINGO',
+    videoIds: ['glwPBMfaiII', 'glwPBMfaiII', 'fVnzXBTde-0','6nhS9bqqgv0','diP0bYi9kZk','T99Ng11MPdY','DwnSQxD2VRI','eScTTi8UtiY','ViqPBSUt59g'],
+    img: MaximumIMG,
+  },
+
+  {
+    name: 'SOIL & PIMP SESSIONS',
+    videoIds: ['Jzt7feQTlxU', 'LOtO_TxQ6iM', 'B4XMRovROsg','0ndbVoFFfkQ','ouHdskl0gqY'],
+    img: MaximumIMG,
+  },
 ];
 
 const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
@@ -226,15 +269,18 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
   };
   
 
-  const handleImageClick = async (videoId: string) => {
-    const videoInfo = await fetchYouTubeVideo(videoId);
+  const handleImageClick = async (artistName: string) => {
+    const artist = artists.find((a) => a.name === artistName);
 
-    if (videoInfo && videoInfo.items && videoInfo.items.length > 0 && videoInfo.items[0].player) {
-      const videoUrl = videoInfo.items[0].player.embedHtml;
-      setSelectedVideo(videoUrl);
-      setModalOpen(true);
-    } else {
-      console.error('fuck');
+    if (artist && artist.videoIds.length > 0) {
+      const randomVideoId = artist.videoIds[Math.floor(Math.random() * artist.videoIds.length)];
+      const videoInfo = await fetchYouTubeVideo(randomVideoId);
+
+      if (videoInfo && videoInfo.items && videoInfo.items.length > 0 && videoInfo.items[0].player) {
+        const videoUrl = videoInfo.items[0].player.embedHtml;
+        setSelectedVideo(videoUrl);
+        setModalOpen(true);
+      }
     }
   };
 
@@ -262,7 +308,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
         >
           <Slider {...settings}>
             {images.map((item, index) => (
-              <FourthImageWrapper key={index} onClick={() => handleImageClick(item.videoId)}>
+              <FourthImageWrapper key={index} onClick={() => handleImageClick(item.text)}>
                 <FourthSliderItem Images={item.img}>
                   <FourthImageText>{item.text}</FourthImageText>
                 </FourthSliderItem>

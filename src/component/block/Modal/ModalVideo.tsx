@@ -32,7 +32,7 @@ const Modal = ({ onClose, videoUrl }: ModalProps) => {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(event) => event.stopPropagation()}>
-        <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+        <ReactPlayer url={videoUrl} controls width="100%" height="100%" playing={true} />
       </ModalContent>
     </ModalOverlay>
   );
