@@ -125,7 +125,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
       }
     } else {
       // 모바일 스크롤
-      if (scrollPosition > 600) {
+      if (scrollPosition > 800) {
         setAnimate(false);
       } else {
         setAnimate(true);
