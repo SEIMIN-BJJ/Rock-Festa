@@ -89,7 +89,6 @@ const MainSection = styled.article<MainSectionProps>`
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  margin-bottom: 39rem;
   background-color: ${({ isScrolled }) => (isScrolled ? "#000" : "transparent")};
 `;
 
@@ -99,12 +98,11 @@ const MainInfo = styled.div<MainInfoProps> `
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
-  padding: 1.2rem 1rem auto;
   position: fixed;
   top: ${({ isScrolled }) => (isScrolled ? "0" : "auto")};
   background-color: ${({ isScrolled }) => (isScrolled ? "#fff" : "#000")};
   color: ${({ isScrolled }) => (isScrolled ? "#000" : "#fff")};
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
