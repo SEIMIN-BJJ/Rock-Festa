@@ -12,6 +12,12 @@ const SecondContent = styled.div`
   align-items: center;
   margin: auto;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+  overflow-x: hidden;
+  flex-direction: column;
+
+  }
 `;
 
 const SecondSection = styled(motion.article) `
@@ -37,6 +43,13 @@ const SecondTitle = styled(motion.h4) `
     align-items: flex-start;
     padding: 0 3rem;
     margin: 4rem 0 0 1rem;
+
+    @media screen and (max-width: 768px) {
+    width: 50%;
+    font-size: 3rem;
+    padding: 5rem auto;
+    margin: 1rem auto;
+}
 `;
 
 const SecondSubTitle = styled(motion.p) `
@@ -49,6 +62,12 @@ const SecondSubTitle = styled(motion.p) `
     margin: 4rem 0 0 1rem;
     margin-top: 0;
     
+    @media screen and (max-width: 768px) {
+    width: 95%;
+    margin: 1rem;
+    padding: 3rem auto;
+
+}
 `;
 
 const SecondImg = styled(motion.img) `
