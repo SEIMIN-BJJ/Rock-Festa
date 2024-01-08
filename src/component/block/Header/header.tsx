@@ -12,6 +12,12 @@ const Header = styled.header`
   justify-content: space-between;
   position: absolute;
 
+  @media (max-width: 768px) {
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+  }
 `;
 
 const Logo = styled.h4`
@@ -23,7 +29,14 @@ const Logo = styled.h4`
   padding: 0 4rem;
   font-size: 0.8rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-right: 23rem;
+  margin-right: 20rem;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 
 `;
 
@@ -35,12 +48,25 @@ const MainLogo = styled.h4`
   color: #fff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 1.5rem;
-  margin-right: 8rem;
+  margin-right: 8rem auto;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: flex-end;
+
+  }
 `;
 
 const Nav = styled.nav`
   width: 100%;
 
+  @media (max-width: 768px) {
+  display: none;
+
+  }
 `;
 
 const Ul = styled.ul`
@@ -49,7 +75,6 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 10rem;
-
 `;
 
 const Li = styled.li`
@@ -118,9 +143,8 @@ const HeaderDiv = styled.div`
         color: #FF0000;
       }
     }
+   }
   }
-}
-
 `;
 
 
