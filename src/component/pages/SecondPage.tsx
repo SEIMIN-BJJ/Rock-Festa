@@ -21,6 +21,7 @@ const SecondSection = styled(motion.article) `
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+
 `;
 
 const SecondTitle = styled(motion.h4) `
@@ -125,10 +126,10 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
       }
     } else {
       // 모바일 스크롤
-      if (scrollPosition > 800) {
-        setAnimate(false);
-      } else {
+      if (scrollPosition > 600 && scrollPosition < 1200) {
         setAnimate(true);
+      } else {
+        setAnimate(false);
       }
     }
   };

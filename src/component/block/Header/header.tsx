@@ -13,9 +13,6 @@ const Header = styled.header`
   position: absolute;
 
   @media (max-width: 768px) {
-    width: 10vw;
-    display: flex;
-    justify-content: space-between;
     z-index: 3;
   }
 `;
@@ -32,10 +29,11 @@ const Logo = styled.h4`
   margin-right: 20rem;
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 20%;
     font-size: 1rem;
     margin: 0 auto;
-    padding: 1rem;
+    justify-content: flex-start;
+    padding: 20px ;
   }
 
 `;
@@ -51,12 +49,11 @@ const MainLogo = styled.h4`
   margin-right: 8rem auto;
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 100%;
     font-size: 1.2rem;
     margin: 0 auto;
-    padding: 1rem;
     justify-content: flex-end;
-
+    padding: 20px ;
   }
 `;
 

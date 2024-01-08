@@ -40,7 +40,7 @@ const MainContent = styled.div`
   margin: auto;
   overflow: hidden;
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   width: 100%;
 }
 `;
@@ -51,7 +51,7 @@ const VideoBackground = styled.video`
   object-fit: cover;
   z-index: 1;
   position: absolute;
-
+  
 `;
 
 const MainTitle = styled(motion.div)`
@@ -69,6 +69,12 @@ const MainTitle = styled(motion.div)`
   padding: 0;
   margin: 0;
   z-index: 2;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 `;
 
 const MainSubTitle = styled(motion.div)`
@@ -81,6 +87,12 @@ const MainSubTitle = styled(motion.div)`
   justify-content: flex-start;
   align-items: flex-start;
   padding-left: 0.4rem;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 `;
 
 const MainSection = styled.article<MainSectionProps>`
@@ -90,6 +102,14 @@ const MainSection = styled.article<MainSectionProps>`
   align-items: center;
   z-index: 2;
   background-color: ${({ isScrolled }) => (isScrolled ? "#000" : "transparent")};
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 1rem auto;
+}
 `;
 
 const MainInfo = styled.div<MainInfoProps> `
@@ -109,6 +129,8 @@ const MainInfo = styled.div<MainInfoProps> `
   color: #fff;
   transition: transform 0.3s ease-in-out;
   transition: 0.21s ease-in-out;
+
+
 
   &.hidden {
     transform: translateY(-100%);
@@ -133,6 +155,12 @@ const MainInfo = styled.div<MainInfoProps> `
 
         color:#ccc;
       }
+
+      @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+      margin: 2rem auto;
+      text-align: center;
+}
       }
     }
 `;
