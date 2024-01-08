@@ -208,7 +208,6 @@ const MainPage = () => {
 
   const ScrollToFirstPage = () => {
     if (firstPageRef.current) {
-      console.log(firstPageRef.current.offsetTop)
       scroll.scrollTo(firstPageRef.current.offsetTop, {
         duration: 300,
         smooth: "smooth",
@@ -222,7 +221,7 @@ const MainPage = () => {
   };
 
   const ScrollToSecondPage = () => {
-      scroll.scrollTo(secondPageRef.current!.offsetTop, {
+    scroll.scrollTo(secondPageRef.current!.offsetTop, {
       duration: 300,
       smooth: "smooth",
     });
@@ -230,17 +229,17 @@ const MainPage = () => {
 
   const ScrollToThirdPage = () => {
     scroll.scrollTo(thirdPageRef.current!.offsetTop, {
-    duration: 300,
-    smooth: "smooth",
-  });
-};
+      duration: 300,
+      smooth: "smooth",
+    });
+  };
 
-const ScrollToFourthdPage = () => {
-  scroll.scrollTo(fourthPageRef.current!.offsetTop, {
-  duration: 300,
-  smooth: "smooth",
-});
-};
+  const ScrollToFourthPage = () => {
+    scroll.scrollTo(fourthPageRef.current!.offsetTop, {
+      duration: 300,
+      smooth: "smooth",
+    });
+  };
 
   return (
     <MainContainer ref={firstPageRef}>
@@ -269,7 +268,7 @@ const ScrollToFourthdPage = () => {
               <li onClick={ScrollToFirstPage}>Home</li>
               <li onClick={ScrollToSecondPage}>Information</li>
               <li onClick={ScrollToThirdPage}>Artist</li>
-              <li onClick={ScrollToFourthdPage}>LIVE</li>
+              <li onClick={ScrollToFourthPage}>LIVE</li>
             </ul>
           </MainInfo>
         </MainSection>
