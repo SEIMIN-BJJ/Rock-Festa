@@ -27,6 +27,10 @@ const SecondSection = styled(motion.article) `
   align-items: flex-start;
   flex-direction: column;
 
+  @media screen and (max-width: 768px) {
+  width: 100vw;
+  height: 100vh;
+  }
 `;
 
 const SecondTitle = styled(motion.h4) `
