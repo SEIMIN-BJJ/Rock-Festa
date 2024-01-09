@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
@@ -189,9 +189,19 @@ const MainPage = () => {
     delay: 0.5,
   };
 
-  const TextScroll = () => {
+  const handleTouchStart = useCallback(() => {
+    // 터치 이벤트 발생 시 동영상을 재생하도록 수정
+    const video = document.querySelector("video");
+    if (video && video.paused) {
+      video.play();
+    }
+  
+    // 터치 이벤트 감지 이후 리스너 제거
+    document.removeEventListener("touchstart", handleTouchStart, false);
+  }, []); // 의존성 배열이 비어있는 경우
+  
+  const TextScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition)
   
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
@@ -207,20 +217,25 @@ const MainPage = () => {
       } else {
         setAnimate(true);
       }
+  
+      // 모바일에서 동영상 자동 재생을 위한 터치 이벤트 감지
+      if (window.innerWidth < 768) {
+        document.addEventListener("touchstart", handleTouchStart, false);
+      }
     }
-  };
+  }, [setAnimate, handleTouchStart]);
 
   useEffect(() => {
     window.addEventListener("scroll", TextScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", TextScroll);
     };
-  }, []);
-
+  }, [TextScroll]);
+  
   useEffect(() => {
     TextScroll();
-  }, []); 
+  }, [TextScroll]);
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);

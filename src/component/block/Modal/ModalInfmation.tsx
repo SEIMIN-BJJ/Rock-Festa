@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import '../../../App.scss';
 
@@ -126,27 +126,6 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
 `;
 
 const ModalInformation = ({ isOpen, onClose, artistName, artistDescription, artistImg }: ModalProps) => {
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', handleEscape);
-    } else {
-      document.body.style.overflow = 'visible';
-      document.removeEventListener('keydown', handleEscape);
-    }
-
-    return () => {
-      document.body.style.overflow = 'visible';
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [isOpen, onClose]);
-
   return (
     <ModalWrapper isOpen={isOpen} onClick={onClose}>
       <ModalContent isOpen={isOpen} onClick={onClose}>
