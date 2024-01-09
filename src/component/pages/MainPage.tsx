@@ -198,7 +198,7 @@ const MainPage = () => {
   
     // 터치 이벤트 감지 이후 리스너 제거
     document.removeEventListener("touchstart", handleTouchStart, false);
-  }, []); // 의존성 배열이 비어있는 경우
+  }, []); 
   
   const TextScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
