@@ -223,10 +223,10 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
     visible: { opacity: 1, x: 0 },
   };
 
-  const animationRight = {
-    hidden: { opacity: 0, x: 200 },
-    visible: { opacity: 1, x: 0 },
-  };
+  // const animationRight = {
+  //   hidden: { opacity: 0, x: 200 },
+  //   visible: { opacity: 1, x: 0 },
+  // };
 
   const transition = {
     duration: 1,
@@ -348,7 +348,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
         </FourthTitle>
         <FourthSliderContainer
           ref={ref}
-          variants={animationRight}
+          variants={animationLeft}
           initial="hidden"
           animate={animate ? 'visible' : 'hidden'}
           transition={transitionSlide}
