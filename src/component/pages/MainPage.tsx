@@ -18,7 +18,7 @@ interface MainSectionProps {
 
 const MainContainer = styled.section`
   width: 100%;
-  height: auto;
+  height: 400vh;
   text-align: center;
   display: flex;
   justify-content: center;
