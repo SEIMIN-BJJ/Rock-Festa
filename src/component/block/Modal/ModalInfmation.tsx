@@ -18,7 +18,7 @@ const ModalWrapper = styled.div<{ isOpen: boolean }>`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer; // 커서 추가
+  cursor: pointer; 
 
   @media screen and (max-width: 768px) {
     width: 100vw;

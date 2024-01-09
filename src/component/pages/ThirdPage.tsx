@@ -49,6 +49,13 @@ const ThirdSection = styled(motion.article)`
   flex-direction: column;
   margin-bottom: 5rem;
 
+  @media screen and (max-width: 768px) {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  }
+
 `;
 
 const ThirdTitle = styled(motion.h4)`
@@ -65,7 +72,7 @@ const ThirdTitle = styled(motion.h4)`
   @media screen and (max-width: 768px) {
     width: 100%;
     font-size: 2rem;
-    margin: 0rem 0 0 2rem;
+    margin: 0 0 0 2rem;
 }
 `;
 
@@ -79,6 +86,10 @@ const ThirdImageWrapper = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease-out;
+
+  @media screen and (max-width: 768px) {
+    height: 40vh;
+}
 
 
   &:hover {
@@ -107,6 +118,8 @@ const ThirdImageText = styled.div`
     width: 100%;
     font-size: 2rem;
     opacity: 1;
+    margin-bottom: -2rem;
+
 }
 
   ${ThirdImageWrapper}:hover & {
