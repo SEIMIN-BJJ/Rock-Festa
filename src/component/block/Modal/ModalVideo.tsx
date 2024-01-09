@@ -43,11 +43,9 @@ const ModalContent = styled.div`
   @media screen and (max-width: 768px) {
     width: 100vw; 
     height: 50vh; 
-    z-index: 1;
     position:relative;
-    border: 0;
-    border-radius: 0;
     padding: 0;
+    margin: 0;
   }
 `;
 
