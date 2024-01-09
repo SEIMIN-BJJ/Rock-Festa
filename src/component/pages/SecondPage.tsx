@@ -14,6 +14,8 @@ const SecondContent = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   flex-direction: column;
 
@@ -45,10 +47,14 @@ const SecondTitle = styled(motion.h4) `
     margin: 4rem 0 0 1rem;
 
     @media screen and (max-width: 768px) {
-    width: 50%;
+    width: auto;
+    height: auto;
     font-size: 3rem;
-    padding: 5rem auto;
+    justify-content: flex-start;
+    padding: 0rem 3rem; 
     margin: 1rem auto;
+    z-index: 1;
+    color: #fff;
 }
 `;
 
@@ -63,9 +69,13 @@ const SecondSubTitle = styled(motion.p) `
     margin-top: 0;
     
     @media screen and (max-width: 768px) {
-    width: 95%;
-    margin: 1rem;
-    padding: 3rem auto;
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    padding: 0rem 2rem auto; 
+    margin: 1rem auto;
+    z-index: 1;
+    color: #fff;
 
 }
 `;
@@ -78,6 +88,13 @@ const SecondImg = styled(motion.img) `
     background-repeat: no-repeat;
     background-size: cover;
 
+    @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    filter: brightness(30%);
+}
 `;
 
 const Information = [
@@ -108,14 +125,14 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const [animate, setAnimate] = useState(false);
 
-  const animationLeft = {
-    hidden: { opacity: 0, x: -50 },
+  const animationRight = {
+    hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
   };
 
-  const animationRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
+  const animationUp = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const transition = {
@@ -125,11 +142,16 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const transitionSecond = {
     duration: 1,
-    delay: 0.3,
+    delay: 1,
   };
   const transitionText = {
     duration: 1,
-    delay: 1,
+    delay: 1.5,
+  };
+
+  const transitionIMG = {
+    duration: 1,
+    delay: 0.2,
   };
 
   const handleScroll = () => {
@@ -145,7 +167,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
       }
     } else {
       // 모바일 스크롤
-      if (scrollPosition > 600 && scrollPosition < 1200) {
+      if (scrollPosition > 200 && scrollPosition < 1200) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -184,7 +206,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         ))}
         {Information.map((item, index) => (
         <SecondSubTitle
-        variants={animationLeft}
+        variants={animationRight}
         initial="hidden"
         animate={animate ? "visible" : "hidden"}
         transition={transitionText}>
@@ -193,10 +215,10 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         ))};
       </SecondSection>
         <SecondImg
-          variants={animationLeft}
+          variants={animationUp}
           initial="hidden"
           animate={animate ? "visible" : "hidden"}
-          transition={transitionSecond} />
+          transition={transitionIMG} />
     </SecondContent>
   );
 });

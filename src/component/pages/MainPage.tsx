@@ -46,7 +46,7 @@ const MainContent = styled.div`
 `;
 
 const VideoBackground = styled.video`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
   z-index: 1;
