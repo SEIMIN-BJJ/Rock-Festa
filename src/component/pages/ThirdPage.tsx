@@ -188,18 +188,21 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-
+    console.log(scrollPosition)
+  
     if (window.innerWidth >= 768) {
-      if (scrollPosition > 1200 && scrollPosition < 2200) {
+      // 웹페이지 스크롤
+      if (scrollPosition > 1300 && scrollPosition < 2000) {
         setAnimate(true);
       } else {
         setAnimate(false);
       }
     } else {
-      if (scrollPosition > 1600) {
-        setAnimate(false);
-      } else {
+      // 모바일 스크롤
+      if (scrollPosition > 1000 && scrollPosition < 2000) {
         setAnimate(true);
+      } else {
+        setAnimate(false);
       }
     }
   };
