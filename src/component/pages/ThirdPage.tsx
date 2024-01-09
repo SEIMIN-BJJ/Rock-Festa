@@ -31,6 +31,13 @@ const ThirdContent = styled.section`
   margin: auto;
   overflow: hidden;
   background-color: #000;
+
+  @media screen and (max-width: 768px) {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  }
 `;
 
 const ThirdSection = styled(motion.article)`
@@ -41,6 +48,7 @@ const ThirdSection = styled(motion.article)`
   align-items: center;
   flex-direction: column;
   margin-bottom: 5rem;
+
 `;
 
 const ThirdTitle = styled(motion.h4)`
@@ -53,10 +61,17 @@ const ThirdTitle = styled(motion.h4)`
   display: flex;
   font-size: 3rem;
   letter-spacing: 2rem;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 2rem;
+    margin: 0rem 0 0 2rem;
+}
 `;
 
 const ThirdSliderContainer = styled(motion.div)`
   width: 80%;
+
 `;
 
 const ThirdImageWrapper = styled.div`
@@ -87,10 +102,18 @@ const ThirdImageText = styled.div`
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 1.5rem;
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 2rem;
+    opacity: 1;
+}
+
   ${ThirdImageWrapper}:hover & {
     opacity: 1;
     z-index: 2;
   }
+
+
 `;
 
 const ThirdSliderItem = styled(motion.div)<{ Images: string }>`
@@ -101,6 +124,14 @@ const ThirdSliderItem = styled(motion.div)<{ Images: string }>`
   background-image: url(${(props) => props.Images});
   position: relative;
   margin: 0 0.3rem;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 30vh;
+    margin: 0 auto;
+    padding: 0 auto;
+    background-size: contain;
+}
 `;
 
 const ThirdCustomArrow = styled.div`
@@ -177,15 +208,22 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 3, // 웹에서는 3개씩 보여주기
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1, // 모바일에서는 1개씩 보여주기
+        },
+      },
+    ],
   };
-
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     console.log(scrollPosition)
