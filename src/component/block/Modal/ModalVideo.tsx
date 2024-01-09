@@ -17,6 +17,19 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+
+  }
 `;
 
 const ModalContent = styled.div`
@@ -26,6 +39,16 @@ const ModalContent = styled.div`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @media screen and (max-width: 768px) {
+    width: 100vw; 
+    height: 50vh; 
+    z-index: 1;
+    position:relative;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
 `;
 
 const Modal = ({ onClose, videoUrl }: ModalProps) => {

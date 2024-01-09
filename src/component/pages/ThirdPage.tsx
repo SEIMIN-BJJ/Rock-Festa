@@ -80,6 +80,7 @@ const ThirdImageWrapper = styled.div`
   cursor: pointer;
   transition: transform 0.3s ease-out;
 
+
   &:hover {
     transform: scale(1.1);
     z-index: 1;
@@ -224,6 +225,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
       },
     ],
   };
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     console.log(scrollPosition)
