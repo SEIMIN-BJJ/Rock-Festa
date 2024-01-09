@@ -125,12 +125,12 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
   const [animate, setAnimate] = useState(false);
 
   const animationRight = {
-    hidden: { opacity: 0, x: 100 },
+    hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0 },
   };
 
   const animationUp = {
-    hidden: { opacity: 0, y: -100 },
+    hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
   };
 
