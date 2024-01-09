@@ -189,17 +189,6 @@ const MainPage = () => {
     delay: 0.5,
   };
 
-  const handleTouchStart = useCallback(() => {
-    // 터치 이벤트 발생 시 동영상을 재생하도록 수정
-    const video = document.querySelector("video");
-    if (video && video.paused) {
-      video.play();
-    }
-  
-    // 터치 이벤트 감지 이후 리스너 제거
-    document.removeEventListener("touchstart", handleTouchStart, false);
-  }, []); 
-  
   const TextScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
   
@@ -218,12 +207,8 @@ const MainPage = () => {
         setAnimate(true);
       }
   
-      // 모바일에서 동영상 자동 재생을 위한 터치 이벤트 감지
-      if (window.innerWidth < 768) {
-        document.addEventListener("touchstart", handleTouchStart, false);
-      }
     }
-  }, [setAnimate, handleTouchStart]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", TextScroll);
@@ -288,7 +273,7 @@ const MainPage = () => {
     <MainContainer ref={firstPageRef}>
       <Header />
       <MainContent>
-      <VideoBackground autoPlay loop muted>
+      <VideoBackground playsInline loop muted>
         <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
       </VideoBackground>
         <MainTitle
