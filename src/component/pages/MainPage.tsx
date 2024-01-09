@@ -51,7 +51,6 @@ const VideoBackground = styled.video`
   object-fit: cover;
   z-index: 1;
   position: absolute;
-  
 `;
 
 const MainTitle = styled(motion.div)`
@@ -273,7 +272,7 @@ const MainPage = () => {
     <MainContainer ref={firstPageRef}>
       <Header />
       <MainContent>
-      <VideoBackground playsInline loop muted>
+      <VideoBackground autoPlay loop muted>
         <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
       </VideoBackground>
         <MainTitle

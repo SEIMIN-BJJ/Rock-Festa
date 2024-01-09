@@ -18,13 +18,10 @@ const SecondContent = styled.div`
   height: 100vh;
   overflow-x: hidden;
   flex-direction: column;
-
   }
 `;
 
 const SecondSection = styled(motion.article) `
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -47,8 +44,6 @@ const SecondTitle = styled(motion.h4) `
     margin: 4rem 0 0 1rem;
 
     @media screen and (max-width: 768px) {
-    width: auto;
-    height: auto;
     font-size: 3rem;
     justify-content: flex-start;
     padding: 0rem 3rem; 
@@ -69,8 +64,6 @@ const SecondSubTitle = styled(motion.p) `
     margin-top: 0;
     
     @media screen and (max-width: 768px) {
-    width: auto;
-    height: auto;
     font-size: 1rem;
     padding: 0rem 2rem auto; 
     margin: 1rem auto;
