@@ -90,13 +90,12 @@ const ThirdImageWrapper = styled.div`
   @media screen and (max-width: 768px) {
     height: 40vh;
 }
-
-
   &:hover {
     transform: scale(1.1);
     z-index: 1;
     opacity: 1;
   }
+  
 `;
 
 const ThirdImageText = styled.div`
