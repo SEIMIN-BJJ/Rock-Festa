@@ -272,7 +272,7 @@ const MainPage = () => {
     <MainContainer ref={firstPageRef}>
       <Header />
       <MainContent>
-      <VideoBackground autoPlay loop muted>
+      <VideoBackground autoPlay loop muted playsInline>
         <source src={process.env.PUBLIC_URL + "/videos/react-movies.mp4"} type="video/mp4" />
       </VideoBackground>
         <MainTitle

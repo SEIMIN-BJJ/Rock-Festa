@@ -130,6 +130,7 @@
 
     list-style: none;
     text-align: center;
+
 }
 .slick-dots li
 {
@@ -187,11 +188,12 @@
     width: 20px;
     height: 20px;
 
-    content: '-';
+    content: '•'; 
     text-align: center;
 
     opacity: .25;
     color: rgb(255, 255, 255);
+
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

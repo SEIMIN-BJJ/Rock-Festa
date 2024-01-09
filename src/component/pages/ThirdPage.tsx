@@ -221,6 +221,8 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1, // 모바일에서는 1개씩 보여주기
+          dots: true,
+
         },
       },
     ],
