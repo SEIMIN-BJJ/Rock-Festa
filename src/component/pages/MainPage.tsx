@@ -27,6 +27,8 @@ const MainContainer = styled.section`
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
     overflow-x: hidden;
   }
 `;
@@ -42,6 +44,7 @@ const MainContent = styled.div`
 
 @media screen and (max-width: 768px) {
   width: 100%;
+  height: 100vh;
 }
 `;
 
@@ -51,6 +54,11 @@ const VideoBackground = styled.video`
   object-fit: cover;
   z-index: 1;
   position: absolute;
+
+  @media screen and (max-width: 768px) {
+  width: 100%;
+  height: 100vh;
+}
 `;
 
 const MainTitle = styled(motion.div)`
