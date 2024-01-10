@@ -31,7 +31,7 @@ const SecondSection = styled(motion.article)`
 
   @media screen and (max-width: 768px) {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   }
 `;
 

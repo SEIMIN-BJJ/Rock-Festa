@@ -90,6 +90,7 @@ const ThirdImageWrapper = styled.div`
   @media screen and (max-width: 768px) {
     height: 40vh;
 }
+
   &:hover {
     transform: scale(1.1);
     z-index: 1;
@@ -233,7 +234,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1, // 모바일에서는 1개씩 보여주기
-          dots: true,
+          dots: false,
 
         },
       },
