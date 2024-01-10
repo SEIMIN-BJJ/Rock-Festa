@@ -25,7 +25,7 @@ const FourthContent = styled.section`
   margin: auto;
   overflow: hidden;
   background-color: #fff;
-
+  
   @media screen and (max-width: 768px) {
   width: 100vw;
   height: 100vh;

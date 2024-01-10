@@ -17,6 +17,7 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
   
   @media screen and (max-width: 768px) {
     width: 100vw;
@@ -28,6 +29,7 @@ const ModalOverlay = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     background: #000;
+    z-index: 999;
 
   }
 `;
