@@ -95,6 +95,10 @@ const ThirdImageWrapper = styled.div`
     transform: scale(1.1);
     z-index: 1;
     opacity: 1;
+    
+    @media screen and (max-width: 768px) {
+      transform: none;
+}
   }
   
 `;

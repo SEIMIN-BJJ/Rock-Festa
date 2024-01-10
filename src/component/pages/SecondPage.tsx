@@ -31,7 +31,7 @@ const SecondSection = styled(motion.article)`
 
   @media screen and (max-width: 768px) {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   }
 `;
 
@@ -132,8 +132,8 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
           {item.rockInformation}
         </SecondSubTitle>
         ))}
-      </SecondSection>
         <SecondImg/>
+      </SecondSection>
     </SecondContent>
   );
 });
