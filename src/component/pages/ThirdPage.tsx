@@ -323,8 +323,6 @@ const ArtistDescription = (artistName: string) => {
       `;
     case 'ASKING ALEXANDRIA':
       return `
-
-
               Asking Alexandria는 2006년 두바이에서 결성된 영국의 메탈코어 밴드이다. 
 
               메탈코어에 일렉트로닉 코어, 하드록적인 색채를 더 한 음악, 
@@ -418,9 +416,6 @@ const ArtistDescription = (artistName: string) => {
               `;
     case 'MAXIMUM THE HORMONE':
       return `
-
-
-
               1998년 결성된 일본 록 밴드이다. 
               
               초기에는 펑크였으나, 점점 성향이 변해 하드코어, 뉴메탈, 스래쉬 메탈, 일본식 락 등 
@@ -474,12 +469,6 @@ const ArtistDescription = (artistName: string) => {
       `;
      case 'SOIL & PIMP SESSIONS':
       return `
-
-
-
-
-
-
               소일 앤 펌프 세션즈(Soil and Pimp Sessions)는 일본의 재즈 밴드로, 2001년에 결성되었다. 
               이들은 현대적이고 에너제틱한 재즈 음악으로 유명하며, 그들의 곡은 강렬하고 다채로운 브라스 섹션과 함께 유쾌하면서도 독창적인 스타일로 알려져 있습니다. 
               소일 앤 펌프 세션즈는 전 세계적으로 인정받아 많은 국내외 음악 팬들에게 사랑을 받고 있습니다.
@@ -495,6 +484,11 @@ const ArtistDescription = (artistName: string) => {
               2003년에는 일본 후지 록 페스티벌에서 공연한 최초의 무명 밴드가 되었습니다. 
               그들은 그곳에서 호평을 받았으며 다음 달에 음반 회사는 계약을 제안하기 위해 안간힘을 썼다. 
               JVC Victor가 이 싸움에서 승리했고 2004년 여름에는 미니 앨범 Pimpin'이 출시되었다.
+
+              소일 앤 펌프 세션즈(Soil and Pimp Sessions)는 일본의 재즈 밴드로, 그들은 뉴 브리티시 재즈(British New Jazz) 운동에 속하는 그룹 중 하나이다. 
+              이들은 특히 활기찬 라이브 공연과 파워풀한 재즈 음악으로 유명하며, 일본 내외에서 폭넓게 인정받고 있다. 
+              이들은 전통적인 재즈 요소와 현대적인 트렌드를 조합하여 독특하고 감각적인 음악을 만들어내고 있다. 
+              소일 앤 펌프 세션즈의 음악은 재즈뿐만 아니라 펑크, 힙합, 일렉트로닉 등 다양한 장르의 영향을 받고 있다.
       `;
 
     default:

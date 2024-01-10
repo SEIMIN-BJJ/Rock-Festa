@@ -94,6 +94,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
       width: 100vw;
       height: auto;
       padding: 2rem;
+      margin-top: -1rem;
     }
 
     &:hover {
@@ -109,10 +110,10 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     white-space: pre-line;
     text-align: left;
     font-family: 'Pretendard-Medium';
-
+    overflow-y: auto;
     @media screen and (max-width: 768px) {
       width: 100vw;
-      height: auto;
+      height: 30vh;
       font-size: 1rem;
       padding: 2rem;
       margin-top: -1rem;
