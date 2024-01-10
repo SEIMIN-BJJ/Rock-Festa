@@ -23,13 +23,11 @@ const ModalOverlay = styled.div`
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    z-index: 3;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #000;
-    z-index: 999;
 
   }
 `;

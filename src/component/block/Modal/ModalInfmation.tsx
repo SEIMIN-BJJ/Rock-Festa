@@ -24,7 +24,6 @@ const ModalWrapper = styled.div<{ isOpen: boolean }>`
     width: 100vw;
     height: 120vh;
     overflow-x: hidden;
-    z-index: 3;
     position: fixed;
     background-color: #000;
     margin-top: -10vh;
@@ -53,7 +52,6 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    z-index: 1;
     position: absolute;
     border: none;
     border-radius: 0;

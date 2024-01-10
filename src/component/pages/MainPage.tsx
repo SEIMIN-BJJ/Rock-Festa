@@ -23,7 +23,6 @@ const MainContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 0;
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
@@ -52,7 +51,6 @@ const VideoBackground = styled.video`
   width: 100vw;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
   position: absolute;
 
   @media screen and (max-width: 768px) {
@@ -75,7 +73,6 @@ const MainTitle = styled(motion.div)`
   opacity: 0.8;
   padding: 0;
   margin: 0;
-  z-index: 2;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -87,7 +84,6 @@ const MainTitle = styled(motion.div)`
 const MainSubTitle = styled(motion.div)`
   width: 70%;
   height: auto;
-  z-index: 2;
   font-size: 2rem;
   color: #ffffffcc;
   display: flex;
@@ -107,7 +103,6 @@ const MainSection = styled.article<MainSectionProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
   background-color: ${({ isScrolled }) => (isScrolled ? "#000" : "transparent")};
 
   @media screen and (max-width: 768px) {
@@ -116,6 +111,7 @@ const MainSection = styled.article<MainSectionProps>`
     align-items: center;
     font-size: 1rem;
     margin: 1rem auto;
+    z-index: 4;
 }
 `;
 
@@ -132,12 +128,9 @@ const MainInfo = styled.div<MainInfoProps> `
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
   color: #fff;
   transition: transform 0.3s ease-in-out;
   transition: 0.21s ease-in-out;
-
-
 
   &.hidden {
     transform: translateY(-100%);

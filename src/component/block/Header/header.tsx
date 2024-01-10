@@ -12,9 +12,6 @@ const Header = styled.header`
   justify-content: space-between;
   position: absolute;
 
-  @media (max-width: 768px) {
-    z-index: 3;
-  }
 `;
 
 const Logo = styled.h4`

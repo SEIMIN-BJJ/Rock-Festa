@@ -93,7 +93,6 @@ const ThirdImageWrapper = styled.div`
 
   &:hover {
     transform: scale(1.1);
-    z-index: 1;
     opacity: 1;
     
     @media screen and (max-width: 768px) {
@@ -114,7 +113,6 @@ const ThirdImageText = styled.div`
   text-align: center;
   opacity: 0.2;
   transition: opacity 0.3s ease-in-out;
-  z-index: 2;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 1.5rem;
 
@@ -128,7 +126,6 @@ const ThirdImageText = styled.div`
 
   ${ThirdImageWrapper}:hover & {
     opacity: 1;
-    z-index: 2;
   }
 
 
@@ -162,7 +159,6 @@ const ThirdCustomArrow = styled.div`
   position: absolute;
   top: 0;
   transform: translateY(-150%);
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
