@@ -31,7 +31,7 @@ const SecondSection = styled(motion.article)`
 
   @media screen and (max-width: 768px) {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   }
 `;
 
@@ -75,7 +75,6 @@ const SecondSubTitle = styled(motion.p) `
     margin: 1rem auto;
     z-index: 1;
     color: #fff;
-
 }
 `;
 
@@ -88,8 +87,8 @@ const SecondImg = styled(motion.img) `
     background-size: cover;
 
     @media screen and (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     z-index: 0;
     filter: brightness(30%);
@@ -98,7 +97,6 @@ const SecondImg = styled(motion.img) `
 
 const Information = [
   {
-
     rockTitle: (
         'SEIMIN MUSIC FESTIVAL'
     ),
@@ -116,13 +114,11 @@ const Information = [
           더군다나 2006년 펜타포트 이후로 락페스티벌을 간적이 없어서 시간이 나고 여유가 되면 락페스티벌을 가서 <br />이 한몸 불사지르겠다는 다짐으로 제작한 이유도 있다.
       </p>
     ),
-
-
   },
-];
+]
+
+
 const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
-
-
   return (
     <SecondContent ref={ref}>
       <SecondSection>
@@ -135,7 +131,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         <SecondSubTitle>
           {item.rockInformation}
         </SecondSubTitle>
-        ))};
+        ))}
       </SecondSection>
         <SecondImg/>
     </SecondContent>
