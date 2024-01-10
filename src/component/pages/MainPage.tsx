@@ -295,7 +295,7 @@ const MainPage = () => {
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
             <ul>
               <li onClick={ScrollToFirstPage}>Home</li>
-              <li onClick={ScrollToSecondPage}>Information</li>
+              <li onClick={ScrollToSecondPage}>Info</li>
               <li onClick={ScrollToThirdPage}>Artist</li>
               <li onClick={ScrollToFourthPage}>LIVE</li>
             </ul>

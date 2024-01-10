@@ -19,6 +19,7 @@ const ModalWrapper = styled.div<{ isOpen: boolean }>`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer; 
+  z-index: 999;
 
   @media screen and (max-width: 768px) {
     width: 100vw;

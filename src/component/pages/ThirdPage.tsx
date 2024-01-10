@@ -254,7 +254,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
       }
     } else {
       // 모바일 스크롤
-      if (scrollPosition > 1000 && scrollPosition < 2000) {
+      if (scrollPosition > 1000 && scrollPosition < 1800) {
         setAnimate(true);
       } else {
         setAnimate(false);
