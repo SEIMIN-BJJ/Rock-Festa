@@ -111,7 +111,6 @@ const MainSection = styled.article<MainSectionProps>`
     align-items: center;
     font-size: 1rem;
     margin: 1rem auto;
-    z-index: 4;
 }
 `;
 
@@ -131,6 +130,7 @@ const MainInfo = styled.div<MainInfoProps> `
   color: #fff;
   transition: transform 0.3s ease-in-out;
   transition: 0.21s ease-in-out;
+  z-index: 3;
 
   &.hidden {
     transform: translateY(-100%);
@@ -160,6 +160,7 @@ const MainInfo = styled.div<MainInfoProps> `
       font-size: 1.2rem;
       margin: 2rem auto;
       text-align: center;
+
 }
       }
     }
