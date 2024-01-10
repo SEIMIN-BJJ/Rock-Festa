@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rock-Festa-react/static/css/main.acbb42e0.css",
-    "main.js": "/Rock-Festa-react/static/js/main.35716127.js",
+    "main.js": "/Rock-Festa-react/static/js/main.c34c54cf.js",
     "reactPlayerYouTube.js": "/Rock-Festa-react/static/js/reactPlayerYouTube.35e04a90.chunk.js",
     "reactPlayerSoundCloud.js": "/Rock-Festa-react/static/js/reactPlayerSoundCloud.7b3c1f0d.chunk.js",
     "reactPlayerVimeo.js": "/Rock-Festa-react/static/js/reactPlayerVimeo.a9e847eb.chunk.js",
@@ -46,7 +46,7 @@
     "static/media/shiina-Info.webp": "/Rock-Festa-react/static/media/shiina-Info.13874791e09c08731f15.webp",
     "index.html": "/Rock-Festa-react/index.html",
     "main.acbb42e0.css.map": "/Rock-Festa-react/static/css/main.acbb42e0.css.map",
-    "main.35716127.js.map": "/Rock-Festa-react/static/js/main.35716127.js.map",
+    "main.c34c54cf.js.map": "/Rock-Festa-react/static/js/main.c34c54cf.js.map",
     "reactPlayerYouTube.35e04a90.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerYouTube.35e04a90.chunk.js.map",
     "reactPlayerSoundCloud.7b3c1f0d.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerSoundCloud.7b3c1f0d.chunk.js.map",
     "reactPlayerVimeo.a9e847eb.chunk.js.map": "/Rock-Festa-react/static/js/reactPlayerVimeo.a9e847eb.chunk.js.map",
@@ -64,6 +64,6 @@
   },
   "entrypoints": [
     "static/css/main.acbb42e0.css",
-    "static/js/main.35716127.js"
+    "static/js/main.c34c54cf.js"
   ]
 }
