@@ -22,8 +22,8 @@ const SecondContent = styled.div`
 `;
 
 const SecondSection = styled(motion.article)`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -32,6 +32,7 @@ const SecondSection = styled(motion.article)`
   @media screen and (max-width: 768px) {
   width: 100vw;
   height: 100vh;
+  flex-direction: column;
   }
 `;
 
@@ -132,8 +133,8 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
           {item.rockInformation}
         </SecondSubTitle>
         ))}
-        <SecondImg/>
       </SecondSection>
+        <SecondImg/>
     </SecondContent>
   );
 });
