@@ -207,7 +207,6 @@ const MainPage = () => {
       } else {
         setAnimate(true);
       }
-  
     }
   }, []);
 
