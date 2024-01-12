@@ -293,9 +293,9 @@ const MainPage = () => {
         <MainSection isScrolled={scrollPosition > 500 ? true : false}>
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
             <ul>
-              <li onClick={ScrollToFirstPage}>Home</li>
-              <li onClick={ScrollToSecondPage}>Info</li>
-              <li onClick={ScrollToThirdPage}>Artist</li>
+              <li onClick={ScrollToFirstPage}>HOME</li>
+              <li onClick={ScrollToSecondPage}>INFO</li>
+              <li onClick={ScrollToThirdPage}>ARTIST</li>
               <li onClick={ScrollToFourthPage}>LIVE</li>
             </ul>
           </MainInfo>
