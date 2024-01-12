@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import FujiRockIMG from '../assets/images/festival.jpeg'
 import { motion } from "framer-motion";
@@ -56,7 +56,7 @@ const SecondTitle = styled(motion.h4) `
     padding: 0rem 3rem; 
     margin: 1rem auto;
     z-index: 1;
-    color: #fff;
+    color: #c9c9c9;
 }
 `;
 
@@ -75,7 +75,8 @@ const SecondSubTitle = styled(motion.p) `
     padding: 0rem 2rem auto; 
     margin: 1rem auto;
     z-index: 1;
-    color: #fff;
+    color: #c9c9c9;
+
 }
 `;
 
@@ -120,21 +121,87 @@ const Information = [
 
 
 const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
+  const [animate, setAnimate] = useState(false);
+
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+  
+    if (window.innerWidth >= 768) {
+      // 웹페이지에서의 스크롤 범위
+      if (scrollPosition > 650 && scrollPosition < 1500) {
+        setAnimate(true);
+      } else {
+        setAnimate(false);
+      }
+    } else {
+      // 모바일에서의 스크롤 범위
+      if (scrollPosition > 450 && scrollPosition < 1200) {
+        setAnimate(true);
+      } else {
+        setAnimate(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    handleScroll();
+  }, []); 
+  const animation = {
+    hidden: { opacity: 0, x: 0 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const transition = {
+    duration: 1,
+    delay: 0.5,
+  };
+
+  const transitionSecond = {
+    duration: 1,
+    delay: 0.9,
+  };
+
+  const transitionThird = {
+    duration: 1,
+    delay: 1.4,
+  };
   return (
     <SecondContent ref={ref}>
       <SecondSection>
         {Information.map((item, index) => (
-        <SecondTitle>
+        <SecondTitle 
+        variants={animation}
+        initial="hidden"
+        animate={animate ? "visible" : "hidden"}
+        transition={transition}
+        >
           {item.rockTitle}
         </SecondTitle>
         ))}
         {Information.map((item, index) => (
-        <SecondSubTitle>
+        <SecondSubTitle
+        variants={animation}
+        initial="hidden"
+        animate={animate ? "visible" : "hidden"}
+        transition={transitionSecond}>
           {item.rockInformation}
         </SecondSubTitle>
         ))}
       </SecondSection>
-        <SecondImg/>
+        <SecondImg
+        variants={animation}
+        initial="hidden"
+        animate={animate ? "visible" : "hidden"}
+        transition={transitionThird}/>
     </SecondContent>
   );
 });
