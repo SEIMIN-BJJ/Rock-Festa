@@ -56,8 +56,8 @@ const SecondTitle = styled(motion.h4) `
     padding: 0rem 3rem; 
     margin: 1rem auto;
     z-index: 1;
-    color: #c9c9c9;
-}
+    color: #fff;
+  }
 `;
 
 const SecondSubTitle = styled(motion.p) `
@@ -75,9 +75,8 @@ const SecondSubTitle = styled(motion.p) `
     padding: 0rem 2rem auto; 
     margin: 1rem auto;
     z-index: 1;
-    color: #c9c9c9;
-
-}
+    color: #fff;
+  }
 `;
 
 const SecondImg = styled(motion.img) `
@@ -94,7 +93,7 @@ const SecondImg = styled(motion.img) `
     position: absolute;
     z-index: 0;
     filter: brightness(30%);
-}
+  }
 `;
 
 const Information = [
@@ -182,7 +181,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         variants={animation}
         initial="hidden"
         animate={animate ? "visible" : "hidden"}
-        transition={transition}
+        transition={transitionSecond}
         >
           {item.rockTitle}
         </SecondTitle>
@@ -192,7 +191,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         variants={animation}
         initial="hidden"
         animate={animate ? "visible" : "hidden"}
-        transition={transitionSecond}>
+        transition={transitionThird}>
           {item.rockInformation}
         </SecondSubTitle>
         ))}
@@ -201,7 +200,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
         variants={animation}
         initial="hidden"
         animate={animate ? "visible" : "hidden"}
-        transition={transitionThird}/>
+        transition={transition}/>
     </SecondContent>
   );
 });
