@@ -13,7 +13,7 @@ interface MainInfoProps {
 }
 
 interface MainSectionProps {
-  isScrolled: boolean;
+  isScrollSection: boolean;
 }
 
 const MainContainer = styled.section`
@@ -103,7 +103,7 @@ const MainSection = styled.article<MainSectionProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ isScrolled }) => (isScrolled ? "#000" : "transparent")};
+  background-color: ${({ isScrollSection }) => (isScrollSection ? "#000" : "transparent")};
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -290,7 +290,7 @@ const MainPage = () => {
               JAZZ / ROCK / J-MUSIC
           </MainSubTitle>
         </MainTitle>
-        <MainSection isScrolled={scrollPosition > 500 ? true : false}>
+        <MainSection isScrollSection={scrollPosition > 500 ? true : false}>
           <MainInfo isScrolled={scrollPosition > 500 ? true : false}>
             <ul>
               <li onClick={ScrollToFirstPage}>HOME</li>

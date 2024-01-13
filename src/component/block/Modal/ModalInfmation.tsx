@@ -128,6 +128,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
 `;
 
 const ModalInformation = ({ isOpen, onClose, artistName, artistDescription, artistImg }: ModalProps) => {
+  
   return (
     <ModalWrapper isOpen={isOpen} onClick={onClose}>
       <ModalContent isOpen={isOpen} onClick={onClose}>

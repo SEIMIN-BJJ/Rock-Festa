@@ -182,8 +182,8 @@ const images = [
 ];
 
 const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
-  const [animate, setAnimate] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [animate, setAnimate] = useState(false);
   const [selectedArtist, setSelectedArtist] = useState<{ img: string; text: string, imgInfo:string; } | null>(null);
 
   const animationLeft = {
@@ -243,7 +243,6 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition)
   
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
