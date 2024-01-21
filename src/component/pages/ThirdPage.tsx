@@ -94,6 +94,7 @@ const ThirdImageWrapper = styled.div`
   &:hover {
     transform: scale(1.1);
     opacity: 1;
+    z-index: 999;
     
     @media screen and (max-width: 768px) {
       transform: none;
