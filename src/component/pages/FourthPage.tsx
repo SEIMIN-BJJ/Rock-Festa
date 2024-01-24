@@ -301,8 +301,9 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
     handleScroll();
   }, []);
 
+  
   const fetchYouTubeVideo = async (videoId: string) => {
-    const apiKey = 'AIzaSyCA5XtkodO7oPyYi6dDKi9pO8K1GLRJsIU';
+    const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
     const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=player&id=${videoId}&key=${apiKey}`;
   
     try {
@@ -318,15 +319,15 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleImageClick = async (artistName: string) => {
     const artist = artists.find((a) => a.name === artistName);
-
+  
     if (artist && artist.videoIds.length > 0) {
       const randomVideoId = artist.videoIds[Math.floor(Math.random() * artist.videoIds.length)];
       const videoInfo = await fetchYouTubeVideo(randomVideoId);
-
+  
       if (videoInfo && videoInfo.items && videoInfo.items.length > 0 && videoInfo.items[0].player) {
         const videoUrl = videoInfo.items[0].player.embedHtml;
         setSelectedVideo(videoUrl);
-        setModalOpen(true);
+        setModalOpen(true); 
       }
     }
   };
@@ -335,6 +336,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
     setModalOpen(false);
     setSelectedVideo('');
   };
+
   return (
     <FourthContent ref={ref}>
       <FourthSection>
@@ -364,7 +366,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
           </Slider>
         </FourthSliderContainer>
       </FourthSection>
-      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />}
+      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />} 
     </FourthContent>
   );
 });

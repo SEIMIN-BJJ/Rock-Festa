@@ -50,6 +50,7 @@ const ModalContent = styled.div`
 `;
 
 const Modal = ({ onClose, videoUrl }: ModalProps) => {
+
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(event) => event.stopPropagation()}>
