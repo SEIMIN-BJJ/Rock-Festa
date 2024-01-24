@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
+import "../../../App.scss";
 
 interface ModalProps {
   onClose: () => void;
@@ -18,7 +19,8 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  
+  overflow: hidden; /* 외부 스크롤을 막기 위해 추가 */
+
   @media screen and (max-width: 768px) {
     width: 100vw;
     height: 100vh;
@@ -28,7 +30,6 @@ const ModalOverlay = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     background: #000;
-
   }
 `;
 
@@ -39,17 +40,25 @@ const ModalContent = styled.div`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* 내부 스크롤을 막기 위해 추가 */
 
   @media screen and (max-width: 768px) {
-    width: 100%; 
-    height: 50%; 
-    position:relative;
+    width: 100%;
+    height: 50%;
+    position: relative;
     padding: 0;
-    
   }
 `;
 
 const Modal = ({ onClose, videoUrl }: ModalProps) => {
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+    document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   return (
     <ModalOverlay onClick={onClose}>
