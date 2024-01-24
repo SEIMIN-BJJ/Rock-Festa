@@ -45,7 +45,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
   justify-content: center;
   align-items: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  border: 1px solid #ffffff66;
+  border: 1px solid #ffffff3d;
   pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
   padding: 2rem;
 
@@ -108,11 +108,12 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     width: 100%;
     height: 100%;
     font-size: 0.80rem;
-    padding: 5px 25px;
+    padding: 15px 25px;
     white-space: pre-line;
     text-align: left;
     font-family: 'Pretendard-Medium';
     overflow-y: auto;
+    margin-left: 1rem;
 
     @media screen and (max-width: 768px) {
       width: 100vw;

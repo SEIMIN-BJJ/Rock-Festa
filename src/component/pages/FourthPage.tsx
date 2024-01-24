@@ -332,6 +332,21 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
     }
   };
 
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, [modalOpen]);
+
   const closeModal = () => {
     setModalOpen(false);
     setSelectedVideo('');
@@ -366,7 +381,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
           </Slider>
         </FourthSliderContainer>
       </FourthSection>
-      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />} 
+      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />}
     </FourthContent>
   );
 });

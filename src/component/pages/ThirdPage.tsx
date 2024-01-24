@@ -244,7 +244,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-  
+  console.log(scrollPosition)
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
       if (scrollPosition > 1300 && scrollPosition < 2000) {
@@ -254,7 +254,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
       }
     } else {
       // 모바일 스크롤
-      if (scrollPosition > 1000 && scrollPosition < 1800) {
+      if (scrollPosition > 1000 && scrollPosition < 2500) {
         setAnimate(true);
       } else {
         setAnimate(false);
@@ -278,6 +278,21 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     setSelectedArtist(artist);
     setModalOpen(true);
   };
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, [modalOpen]);
 
 const ArtistDescription = (artistName: string) => {
   switch (artistName) {
