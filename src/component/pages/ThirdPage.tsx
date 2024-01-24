@@ -244,7 +244,6 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-  console.log(scrollPosition)
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
       if (scrollPosition > 1300 && scrollPosition < 2000) {
