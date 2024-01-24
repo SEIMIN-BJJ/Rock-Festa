@@ -45,7 +45,7 @@ const ModalContent = styled.div`
     height: 50%; 
     position:relative;
     padding: 0;
-    margin-top: -20vh;
+    
   }
 `;
 

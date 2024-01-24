@@ -274,7 +274,6 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition)
     if (window.innerWidth >= 768) {
       if (scrollPosition > 2400 && scrollPosition < 2800) {
         setAnimate(true);
