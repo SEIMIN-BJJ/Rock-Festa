@@ -347,6 +347,30 @@ const ArtistDescription = (artistName: string) => {
               그러던 중 2015년 보컬 대니 워스놉이 자신의 새로운 밴드 We Are Harlot의 활동에 집중하고자 밴드를 탈퇴하게 된다. 
               벤 브루스와의 인터뷰에 따르면 대니는 2집 이후 스크리밍과 헤비한 음악에 대한 흥미를 
               잃어가고 있었고 밴드의 멤버로 계속 활동할 수 있을지에 대해 알수 없었다고 하는 등 이전부터 탈퇴를 고민했던 것으로 보인다.
+
+              이 당시는 Killswitch Engage, Lamb of God, As I Lay Dying 등의 밴드들이 빌보드 차트 TOP 10에 오르는 등 메탈코어가 메인스트림 중 하나로 떠오르던 시기로 
+              
+              Asking Alexandria 역시 메탈코어 붐에 힘입어 미국 시장에서도 주목받았다. 
+              
+              2011년 발매된 2집 "Reckless & Relentless"는 빌보드 차트 9위에 오르는 성공을 거두었다. 
+              
+              "Breathless", "To The Stage" 등의 곡이 싱글컷 되었으며, 앨범의 성공 이후 밴드는 Avenged Sevenfold의 서포트 밴드로써 함께 투어를 하고 
+              
+              Of Mice & Men, Crown the Empire와 같은 메탈코어 씬의 인기 밴드들을 서포트로 한 북미 헤드라이닝 투어를 진행하였으며, 
+              
+              Vans Warped Tour 2011에서 헤드라이너로 출연하였다. 
+              
+              또한 2012년 인디펜던트 뮤직 어워드에서 베스트 메탈/하드코어 상을 수상하는 등 메탈코어의 붐을 이끄는 밴드로 떠오르게 되었다. 
+              
+              그리고 2013년 3집 "From Death to Destiny"가 발매되었다. 기존의 메탈코어 사운드에 80년대 하드록의 영향을 받았다고 하는 이 앨범은 빌보드 차트 5위에 오르는 성공을 거두었다. 
+              
+              이 성적은 현재까지 밴드의 가장 높은 앨범 차트 기록이며 Sumerian Records에서 발매한 앨범 중 첫 주에 가장 높은 세일즈를 기록한 앨범이 되었다. 
+              
+              앨범에서는 "Run Free", "The Death of Me", "Killing You", "Moving On" 등의 곡이 히트하였다. 
+              
+              밴드는 얼터너티브 프레스의 베스트 라이브 밴드와 베스트 인터내셔널 밴드 후보에 올랐으며 런던 브릭스톤 아카데미에서의 공연을 매진시키는 등 승승장구하였다. 
+              
+              이 공연은 "Live from Brixton and Beyond"라는 타이틀로 DVD로도 발매되었다.
               `;
     case 'CROSS FAITH':
       return `

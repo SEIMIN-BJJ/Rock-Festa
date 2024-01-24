@@ -39,7 +39,6 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
   border-radius: 8px;
   color: #fff;
   display: flex;
@@ -48,6 +47,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border: 1px solid #ffffff66;
   pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+  padding: 2rem;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
@@ -57,6 +57,8 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     border: none;
     border-radius: 0;
     margin-top: -5vh;
+    padding: 2rem auto;
+
   }
 
   &:hover {
@@ -74,7 +76,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     @media screen and (max-width: 768px) {
       width: 100vw;
       height: auto;
-      padding: 1rem;
+      padding: 2rem auto;
     }
 
     &:hover {
@@ -114,10 +116,9 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
 
     @media screen and (max-width: 768px) {
       width: 100vw;
-      height: 40vh;
-      font-size: 1rem;
-      padding: 2rem;
-      margin-top: -1rem;
+      height: 60vh;
+      font-size: 1.1rem;
+      padding: 2rem auto;
       overflow-y: auto;
     }
   }
