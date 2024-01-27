@@ -192,10 +192,10 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     visible: { opacity: 1, x: 0 },
   };
 
-  // const animationRight = {
-  //   hidden: { opacity: 0, x: 200 },
-  //   visible: { opacity: 1, x: 0 },
-  // };
+  const animationRight = {
+    hidden: { opacity: 0, x: 200 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   const transition = {
     duration: 1,
@@ -204,7 +204,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const transitionSlide = {
     duration: 1,
-    delay: 0.3,
+    delay: 0.5,
   };
 
   const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
@@ -569,7 +569,7 @@ const ArtistDescription = (artistName: string) => {
         </ThirdTitle>
         <ThirdSliderContainer
           ref={ref}
-          variants={animationLeft}
+          variants={animationRight}
           initial="hidden"
           animate={animate ? 'visible' : 'hidden'}
           transition={transitionSlide}
