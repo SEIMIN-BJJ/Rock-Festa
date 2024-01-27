@@ -2,37 +2,61 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = styled.footer`
-  width: 100%;
-  height: 10rem;
+  width: 95%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
   padding: 30px 30px;
   left: 0;
   bottom: 0;
   right: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #fff;
+  border-top: 1px solid #000;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
-const FooterText = styled.p`
+const FooterUl = styled.div`
   width: 100%;
-  height: 100%;
-  font-size: 15px;
-  border: 1px solid black;
-  margin: 0 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 20px auto;
+  color: #000;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
 `;
 
+const FooterText = styled.p`
+width: 100%;
+padding: 1rem;
+font-size: 0.8rem;
+  
+@media (max-width: 768px) {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+`;
 const footer = () => {
   return (
     <Footer>
-      <FooterText>
-        본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.
+      <FooterUl>
+        <FooterText>
+        SEIMIN MUSIC ROCK FESTIVAL
         <br />
         ©2023 Lim Sung Min. All Rights Reserved.
-      </FooterText>
+        </FooterText>
+      </FooterUl>
     </Footer>
   );
 };

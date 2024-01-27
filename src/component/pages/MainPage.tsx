@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 import Header from "component/block/Header/header";
+import Footer from "component/block/Footer/footer";
 import SecondPage from './SecondPage';
 import ThirdPage from "./ThirdPage";
 import FourthPage from "./FourthPage";
+import FifthPage from "./FifthPage";
 import "../../App.scss";
 
 interface MainInfoProps {
@@ -173,6 +175,7 @@ const MainPage = () => {
   const secondPageRef = useRef<HTMLDivElement | null>(null);
   const thirdPageRef = useRef<HTMLDivElement | null>(null);
   const fourthPageRef = useRef<HTMLDivElement | null>(null);
+  const fifthPageRef = useRef<HTMLDivElement | null>(null);
   const [animate, setAnimate] = useState(false);
 
   const animationUp = {
@@ -269,6 +272,13 @@ const MainPage = () => {
     });
   };
 
+  const ScrollToFifthPage = () => {
+    scroll.scrollTo(fifthPageRef.current!.offsetTop, {
+      duration: 300,
+      smooth: "smooth",
+    });
+  };
+
   return (
     <MainContainer ref={firstPageRef}>
       <Header />
@@ -297,6 +307,7 @@ const MainPage = () => {
               <li onClick={ScrollToSecondPage}>INFO</li>
               <li onClick={ScrollToThirdPage}>ARTIST</li>
               <li onClick={ScrollToFourthPage}>LIVE</li>
+              <li onClick={ScrollToFifthPage}>PHOTO</li>
             </ul>
           </MainInfo>
         </MainSection>
@@ -304,6 +315,8 @@ const MainPage = () => {
       <SecondPage ref={secondPageRef}></SecondPage>
       <ThirdPage ref={thirdPageRef}></ThirdPage>
       <FourthPage ref={fourthPageRef}></FourthPage>
+      <FifthPage ref={fifthPageRef}></FifthPage>
+      <Footer />
     </MainContainer>
   );
 };
