@@ -195,7 +195,6 @@ const MainPage = () => {
 
   const TextScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
-  
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
       if (scrollPosition > 0) {

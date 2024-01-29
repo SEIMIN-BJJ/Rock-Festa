@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 import '../../../App.scss';
 
 interface ModalProps {
@@ -10,15 +11,15 @@ interface ModalProps {
   artistImg: string;
 }
 
-const ModalWrapper = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+const ModalWrapper = styled(motion.div)`
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer; 
+  cursor: pointer;
   z-index: 999;
 
   @media screen and (max-width: 768px) {
@@ -31,13 +32,13 @@ const ModalWrapper = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-const ModalContent = styled.div<{ isOpen: boolean }>`
+const ModalContent = styled(motion.div)`
   width: 70%;
   height: 80%;
   background: #000000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+  top: 10%;
+  left: 17%;
   transform: translate(-50%, -50%);
   border-radius: 8px;
   color: #fff;
@@ -46,7 +47,6 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
   align-items: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border: 1px solid #ffffff3d;
-  pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
   padding: 2rem;
 
   @media screen and (max-width: 768px) {
@@ -58,11 +58,10 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     border-radius: 0;
     margin-top: -5vh;
     padding: 2rem auto;
+    top: 10;
+    left: 0;
+    transform: translate(-50%, -50%);
 
-  }
-
-  &:hover {
-    cursor: pointer;
   }
 
   h2 {
@@ -91,6 +90,7 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
     background-position: center center;
     background-repeat: no-repeat;
     margin-top: 3rem;
+
 
     @media screen and (max-width: 768px) {
       width: 100vw;
@@ -123,24 +123,41 @@ const ModalContent = styled.div<{ isOpen: boolean }>`
       overflow-y: auto;
     }
   }
-
-  &:hover {
-    cursor: auto;
-  }
 `;
 
 const ModalInformation = ({ isOpen, onClose, artistName, artistDescription, artistImg }: ModalProps) => {
-  
+
+  const handleModalContentClick = () => {
+  };
+
   return (
-    <ModalWrapper isOpen={isOpen} onClick={onClose}>
-      <ModalContent isOpen={isOpen} onClick={onClose}>
-        <h2 onClick={(e) => e.stopPropagation()}>
-          {artistName}
-          <img src={artistImg} alt={artistName} onClick={(e) => e.stopPropagation()} />
-        </h2>
-        <p>{artistDescription}</p>
-      </ModalContent>
-    </ModalWrapper>
+    <AnimatePresence>
+      {isOpen && (
+        <ModalWrapper
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <ModalContent
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.5 }}
+            onClick={() => {
+              handleModalContentClick();
+              onClose(); 
+            }}
+
+          >
+            <h2>
+              {artistName}
+              <img src={artistImg} alt={artistName} />
+            </h2>
+            <p onClick={onClose}>{artistDescription}</p>
+          </ModalContent>
+        </ModalWrapper>
+      )}
+    </AnimatePresence>
   );
 };
 

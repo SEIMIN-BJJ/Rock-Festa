@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = styled.footer`
-  width: 95%;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
@@ -12,10 +12,10 @@ const Footer = styled.footer`
   bottom: 0;
   right: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: #fff;
-  border-top: 1px solid #000;
   padding: 0;
   margin: 0;
+  /* border-top: 1px solid #e2e2e2; */
+  background-color: #000;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -28,7 +28,7 @@ const FooterUl = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px 20px auto;
-  color: #000;
+  color: #fff;
 
   @media (max-width: 768px) {
     width: 100%;

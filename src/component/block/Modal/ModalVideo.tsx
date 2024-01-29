@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 import "../../../App.scss";
+import { motion } from 'framer-motion';
+
 
 interface ModalProps {
   onClose: () => void;
   videoUrl: string;
 }
 
-const ModalOverlay = styled.div`
+const ModalOverlay = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +21,7 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  overflow: hidden; /* 외부 스크롤을 막기 위해 추가 */
+  overflow: hidden; 
 
   @media screen and (max-width: 768px) {
     width: 100vw;
@@ -40,7 +42,7 @@ const ModalContent = styled.div`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* 내부 스크롤을 막기 위해 추가 */
+  overflow: hidden; 
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -50,10 +52,14 @@ const ModalContent = styled.div`
   }
 `;
 
-const Modal = ({ onClose, videoUrl }: ModalProps) => {
+const ModalVideo = ({ onClose, videoUrl }: ModalProps) => {
 
   return (
-    <ModalOverlay onClick={onClose}>
+    <ModalOverlay 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}>
       <ModalContent onClick={(event) => event.stopPropagation()}>
         <ReactPlayer url={videoUrl} controls width="100%" height="100%" playing={true} />
       </ModalContent>
@@ -61,4 +67,4 @@ const Modal = ({ onClose, videoUrl }: ModalProps) => {
   );
 };
 
-export default Modal;
+export default ModalVideo;

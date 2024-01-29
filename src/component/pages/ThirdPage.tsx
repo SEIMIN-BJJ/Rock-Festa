@@ -31,6 +31,7 @@ const ThirdContent = styled.section`
   margin: auto;
   overflow: hidden;
   background-color: #000;
+  padding: 0;
 
   @media screen and (max-width: 768px) {
   width: 100vw;
@@ -47,7 +48,6 @@ const ThirdSection = styled(motion.article)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 5rem;
 
   @media screen and (max-width: 768px) {
   width: 100vw;

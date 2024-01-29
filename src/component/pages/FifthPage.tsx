@@ -1,24 +1,31 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import axios from 'axios';
+import ModalPhoto from 'component/block/Modal/ModalPhoto';
 
+interface UnsplashPhoto {
+  urls: {
+    regular: string;
+  };
+}
 
 const FifthContent = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 1rem auto;
   overflow: hidden;
   background-color: #fff;
   color: #000;
 
   @media screen and (max-width: 768px) {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  flex-direction: column;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    flex-direction: column;
   }
 `;
 
@@ -29,13 +36,13 @@ const FifthSection = styled(motion.article)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #000;
+  margin-top: 3rem;
 
   @media screen and (max-width: 768px) {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  flex-direction: column;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    flex-direction: column;
   }
 `;
 
@@ -54,70 +61,133 @@ const FifthTitle = styled(motion.h4)`
     width: 100%;
     font-size: 2rem;
     margin: 0 0 0 2rem;
-}
+  }
 `;
 
 const FifthPhotoContainer = styled(motion.div)`
   width: 80%;
-  height: 70%;
-  border: 1px solid #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+
   @media screen and (max-width: 768px) {
     width: 100%;
     font-size: 2rem;
-    margin: 0 0 0 2rem;
-}
+    padding: 1rem;
+  }
 `;
 
 const Fifthitem = styled(motion.ul)`
   width: 100%;
-  height: 100%;
-  border: 1px solid #000;
-  margin: 1rem;
+  height: auto;
   display: grid;
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
 
   @media screen and (max-width: 768px) {
     width: 100%;
     font-size: 2rem;
-    margin: 0 0 0 2rem;
-}
+  }
 
- li {
-    width: 20rem;
-    height: 20rem;
-    border: 1px solid #000;
+  li {
+    width: 100%; 
+    max-width: 30rem; 
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
 
- }
+    @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+    img {
+      width: 100%; 
+      height: 100%;
+      object-fit: cover;
+      transition: 0.21s ease-in-out;
+      cursor: pointer;
+      filter: brightness(70%);
+
+
+    &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(100%);
+
+  }
+    }
+  }
 `;
 
 const FifthPage = forwardRef<HTMLDivElement>((props, ref) => {
+  const [photos, setPhotos] = useState<UnsplashPhoto[]>([]);
+  const [page, setPage] = useState<number>(1);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string>('');
 
-    return (
-        <FifthContent ref={ref}>
-            <FifthSection>
-                <FifthTitle>
-                    PHOTO
-                </FifthTitle>
-                <FifthPhotoContainer>
-                    <Fifthitem>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </Fifthitem>
-                </FifthPhotoContainer>
-            </FifthSection>
-        </FifthContent>
+  const fetchPhotos = useCallback(async (pageNum: number) => {
+    try {
+      const response = await axios.get(
+        `https://api.unsplash.com/search/photos?query=rock%20festival&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&page=${pageNum}`
       );
-    });
+      const photoData: UnsplashPhoto[] = response.data.results;
+      setPhotos((prevPhotos) => [...prevPhotos, ...photoData]);
+      setPage(pageNum);
+    } catch (error) {
+      console.error('사진:', error);
+    }
+  }, []);
+
+  const openModal = (imageUrl: string) => {
+    setSelectedImageUrl(imageUrl);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleScroll = useCallback(() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      fetchPhotos(page + 1);
+    }
+  }, [fetchPhotos, page]);
+
+  useEffect(() => {
+    fetchPhotos(page);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [fetchPhotos, handleScroll, page]);
+
+  return (
+    <FifthContent ref={ref}>
+      <FifthSection>
+        <FifthTitle>PHOTO</FifthTitle>
+        <FifthPhotoContainer>
+          <Fifthitem>
+            {photos.map((photo, index) => (
+              <li key={index}>
+                <img
+                  src={photo.urls.regular}
+                  alt={`${index + 1}`}
+                  onClick={() => openModal(photo.urls.regular)}
+                />
+              </li>
+            ))}
+          </Fifthitem>
+        </FifthPhotoContainer>
+      </FifthSection>
+      {modalOpen && (
+        <ModalPhoto imageUrl={selectedImageUrl} closeModal={closeModal} modalOpen={modalOpen} />
+      )}
+    </FifthContent>
+  );
+});
 
 export default FifthPage;

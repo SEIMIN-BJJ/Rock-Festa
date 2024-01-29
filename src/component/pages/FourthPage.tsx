@@ -1,7 +1,7 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Modal from 'component/block/Modal/ModalVideo';
+import ModalVideo from 'component/block/Modal/ModalVideo';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -41,7 +41,6 @@ const FourthSection = styled(motion.article)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 5rem;
 
   @media screen and (max-width: 768px) {
   width: 100vw;
@@ -274,7 +273,6 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
     if (window.innerWidth >= 768) {
       if (scrollPosition > 2400 && scrollPosition < 2800) {
         setAnimate(true);
@@ -382,7 +380,7 @@ const FourthPage = forwardRef<HTMLDivElement>((props, ref) => {
           </Slider>
         </FourthSliderContainer>
       </FourthSection>
-      {modalOpen && <Modal onClose={closeModal} videoUrl={selectedVideo} />}
+      {modalOpen && <ModalVideo onClose={closeModal} videoUrl={selectedVideo} />}
     </FourthContent>
   );
 });
