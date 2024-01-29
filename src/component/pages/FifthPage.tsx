@@ -43,6 +43,8 @@ const FifthSection = styled(motion.article)`
     height: auto;
     overflow-x: hidden;
     flex-direction: column;
+    margin-top: 5rem;
+
   }
 `;
 
