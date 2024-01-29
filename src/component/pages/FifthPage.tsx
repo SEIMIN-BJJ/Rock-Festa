@@ -16,10 +16,8 @@ const FifthContent = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem auto;
   overflow: hidden;
   background-color: #fff;
-  color: #000;
 
   @media screen and (max-width: 768px) {
     width: 100vw;
@@ -31,7 +29,7 @@ const FifthContent = styled.section`
 
 const FifthSection = styled(motion.article)`
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,8 +79,8 @@ const Fifthitem = styled(motion.ul)`
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.5rem;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -97,7 +95,8 @@ const Fifthitem = styled(motion.ul)`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
+    border: 1px solid #fff;
 
     @media screen and (max-width: 768px) {
     width: 100%;

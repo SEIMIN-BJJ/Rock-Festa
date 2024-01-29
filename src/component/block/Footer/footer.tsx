@@ -14,7 +14,6 @@ const Footer = styled.footer`
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 0;
   margin: 0;
-  /* border-top: 1px solid #e2e2e2; */
   background-color: #000;
 
   @media (max-width: 768px) {
@@ -54,7 +53,7 @@ const footer = () => {
         <FooterText>
         SEIMIN MUSIC ROCK FESTIVAL
         <br />
-        ©2023 Lim Sung Min. All Rights Reserved.
+        ©2024 Lim Sung Min. All Rights Reserved.
         </FooterText>
       </FooterUl>
     </Footer>
