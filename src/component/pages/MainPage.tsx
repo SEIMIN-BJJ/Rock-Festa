@@ -87,7 +87,7 @@ const MainSubTitle = styled(motion.div)`
   width: 70%;
   height: auto;
   font-size: 2rem;
-  color: #ffffffcc;
+  color: #ffffffce;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
