@@ -41,12 +41,11 @@ const ModalContent = styled.div`
   background: #171717;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden; 
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    height: 50%;
+    height: 40%;
     position: relative;
     padding: 0;
   }
