@@ -33,6 +33,7 @@ const SecondSection = styled(motion.article)`
   width: 100vw;
   height: 100vh;
   flex-direction: column;
+  margin-top: 3rem;
   }
 `;
 
@@ -53,7 +54,7 @@ const SecondTitle = styled(motion.h4) `
     @media screen and (max-width: 768px) {
     font-size: 3rem;
     justify-content: flex-start;
-    padding: 0rem 3rem; 
+    padding: 10px 20px;
     margin: 1rem auto;
     z-index: 1;
     color: #fff;
@@ -71,11 +72,11 @@ const SecondSubTitle = styled(motion.p) `
     margin-top: 0;
     
     @media screen and (max-width: 768px) {
-    font-size: 1rem;
-    padding: 0rem 2rem auto; 
-    margin: 1rem auto;
+    font-size: 1.3rem;
+    margin: 0rem auto;
     z-index: 1;
     color: #fff;
+    padding: 10px 20px;
   }
 `;
 
