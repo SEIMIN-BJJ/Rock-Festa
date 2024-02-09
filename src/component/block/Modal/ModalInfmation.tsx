@@ -107,8 +107,8 @@ const ModalContent = styled(motion.div)`
   p {
     width: 100%;
     height: 100%;
-    font-size: 0.80rem;
-    padding: 15px 25px;
+    font-size: 1rem;
+    padding: 0px 25px;
     white-space: pre-line;
     text-align: left;
     font-family: 'Pretendard-Medium';
@@ -118,9 +118,10 @@ const ModalContent = styled(motion.div)`
     @media screen and (max-width: 768px) {
       width: 100vw;
       height: 60vh;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       padding: 2rem auto;
       overflow-y: auto;
+      margin-left: 0;
     }
   }
 `;
