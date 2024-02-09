@@ -296,8 +296,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
 const ArtistDescription = (artistName: string) => {
   switch (artistName) {
     case 'RED HOT CHILI PEPPERS':
-      return `
-        미국 최고의 펑크 락 (Funk Rock) 밴드로 꼽힌다.
+      return `미국 최고의 펑크 락 (Funk Rock) 밴드로 꼽힌다.
 
         기본적인 스타일은 펑크에 기반한 얼터너티브 록이다. 
         80년대에는 순수 펑크 록만 했으나 90년대부터 얼터너티브 록의 요소를 대폭 받아들였다. 
@@ -332,8 +331,7 @@ const ArtistDescription = (artistName: string) => {
         물론 Californicaiton 이전에도 그들의 똘기 넘치는 뮤직비디오는 많이 있다.
       `;
     case 'ASKING ALEXANDRIA':
-      return `
-              Asking Alexandria는 2006년 두바이에서 결성된 영국의 메탈코어 밴드이다. 
+      return `Asking Alexandria는 2006년 두바이에서 결성된 영국의 메탈코어 밴드이다. 
 
               메탈코어에 일렉트로닉 코어, 하드록적인 색채를 더 한 음악, 
               1990년대 헤비메탈 밴드를 연상케 하는 이미지와 라이브 퍼포먼스로도 잘 알려져 있다. 
@@ -387,8 +385,7 @@ const ArtistDescription = (artistName: string) => {
               이 공연은 "Live from Brixton and Beyond"라는 타이틀로 DVD로도 발매되었다.
               `;
     case 'CROSS FAITH':
-      return `
-              오사카 출신의 메탈코어 & 트랜스코어 밴드이다. 
+      return `오사카 출신의 메탈코어 & 트랜스코어 밴드이다. 
               
               2006년도에 크로스페이스의 전신이 되었던 밴드를 첫 결성한 이래 몇번의 멤버 교체를 통해 
               현재는 다섯명의 편성으로 최종적으로 확립이 되었다. 
@@ -423,8 +420,7 @@ const ArtistDescription = (artistName: string) => {
               서포트 맴버 대리고 공연한다고 한다.
               `;    
       case 'FEAR AND LOATHING IN LASVEGAS':
-      return `
-              2008년 여름에 멤버들의 고향인 고베시에서 결성되고, 헤비메탈과 키보드 전자음의 독특한 융합은 많은 관객을 매료했으나 
+      return `2008년 여름에 멤버들의 고향인 고베시에서 결성되고, 헤비메탈과 키보드 전자음의 독특한 융합은 많은 관객을 매료했으나 
               클린 보컬은 듣는 사람들을 만족시킬 만큼 성공하지 못하였다.
               적절한 사람을 찾아다니는 데 긴 시간을 보내다 2009년에 So를 영입 후, 6인 체제를 갖추고서 본격적인 활동을 시작하였다.
               
@@ -449,8 +445,7 @@ const ArtistDescription = (artistName: string) => {
               
               `;
     case 'MAXIMUM THE HORMONE':
-      return `
-              1998년 결성된 일본 록 밴드이다. 
+      return `1998년 결성된 일본 록 밴드이다. 
               
               초기에는 펑크였으나, 점점 성향이 변해 하드코어, 뉴메탈, 스래쉬 메탈, 일본식 락 등 
               여러가지 음악적 요소를 한꺼번에 아우르는 난장형 카타르시스를 추구하는 격렬한 밴드.
@@ -528,8 +523,7 @@ const ArtistDescription = (artistName: string) => {
               최근엔, SHINee KEY가 본능을 따라 부르기도 했다.
       `;
      case 'SOIL & PIMP SESSIONS':
-      return `
-              소일 앤 펌프 세션즈(Soil and Pimp Sessions)는 일본의 재즈 밴드로, 2001년에 결성되었다. 
+      return `소일 앤 펌프 세션즈(Soil and Pimp Sessions)는 일본의 재즈 밴드로, 2001년에 결성되었다. 
               이들은 현대적이고 에너제틱한 재즈 음악으로 유명하며, 그들의 곡은 강렬하고 다채로운 브라스 섹션과 함께 유쾌하면서도 독창적인 스타일로 알려져 있습니다. 
               소일 앤 펌프 세션즈는 전 세계적으로 인정받아 많은 국내외 음악 팬들에게 사랑을 받고 있습니다.
 
