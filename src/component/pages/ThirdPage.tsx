@@ -246,7 +246,7 @@ const ThirdPage = forwardRef<HTMLDivElement>((props, ref) => {
     const scrollPosition = window.scrollY;
     if (window.innerWidth >= 768) {
       // 웹페이지 스크롤
-      if (scrollPosition > 1300 && scrollPosition < 2000) {
+      if (scrollPosition > 1300 && scrollPosition < 10000) {
         setAnimate(true);
       } else {
         setAnimate(false);
