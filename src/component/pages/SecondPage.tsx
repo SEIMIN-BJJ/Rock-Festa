@@ -128,7 +128,7 @@ const SecondPage = forwardRef<HTMLDivElement>((props, ref) => {
     const scrollPosition = window.scrollY;
     if (window.innerWidth >= 768) {
       // 웹페이지에서의 스크롤 범위
-      if (scrollPosition > 650 && scrollPosition < 1500) {
+      if (scrollPosition > 650 && scrollPosition < 10000) {
         setAnimate(true);
       } else {
         setAnimate(false);
