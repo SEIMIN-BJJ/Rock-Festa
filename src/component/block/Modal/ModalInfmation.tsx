@@ -115,6 +115,10 @@ const ModalContent = styled(motion.div)`
     overflow-y: auto;
     margin-left: 1rem;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     @media screen and (max-width: 768px) {
       width: 100vw;
       height: 60vh;
